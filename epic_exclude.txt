@@ -1,0 +1,7 @@
+# App IDs the Epic exporter leaves out of its CSV files.
+# One App ID per line; anything after "#" is a comment.
+
+# Non-game entries
+AukSoundtrack                     # Q.U.B.E. 2 Soundtrack
+ca02598c9a5c4d5491d6431ce8e8d6e7  # Chivalry 2 - Public Testing
+Pigeon                            # Trackmania Starter Access

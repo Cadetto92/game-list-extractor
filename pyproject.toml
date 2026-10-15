@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "game-list-extractor"
+version = "0.1.0"
+description = "Export owned game libraries from Epic, GOG, and Steam"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+epic = ["legendary-gl>=0.20"]
+
+[project.scripts]
+export-epic-games = "epic_games:main"
+export-gog-games = "gog_games:main"
+export-steam-games = "steam_games:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["epic_games", "export_utils", "gog_games", "steam_games"]
