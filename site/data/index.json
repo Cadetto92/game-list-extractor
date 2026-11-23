@@ -1,0 +1,8 @@
+{
+ "lists": [
+  "epic_android.json",
+  "epic_windows.json",
+  "gog_windows.json",
+  "steam_windows.json"
+ ]
+}

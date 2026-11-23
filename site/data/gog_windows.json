@@ -1,0 +1,157 @@
+{
+ "platform": "gog",
+ "device": "windows",
+ "extract_date": "2026-11-23",
+ "count": 26,
+ "games": [
+  {
+   "title": "Baldur's Gate II: Enhanced Edition",
+   "id": "1207666373",
+   "category": "Role-playing",
+   "url": "https://www.gog.com/en/game/baldurs_gate_2_enhanced_edition"
+  },
+  {
+   "title": "Baldur's Gate: Enhanced Edition",
+   "id": "1207666353",
+   "category": "Role-playing",
+   "url": "https://www.gog.com/en/game/baldurs_gate_enhanced_edition"
+  },
+  {
+   "title": "BioShock™",
+   "id": "2022341186",
+   "category": "Shooter",
+   "url": "https://www.gog.com/en/game/bioshock_remastered"
+  },
+  {
+   "title": "BioShock™ Remastered",
+   "id": "1439656515",
+   "category": "Shooter",
+   "url": "https://www.gog.com/en/game/bioshock_remastered"
+  },
+  {
+   "title": "Bō: Path of the Teal Lotus",
+   "id": "1882554410",
+   "category": "Action",
+   "url": "https://www.gog.com/en/game/bo_path_of_the_teal_lotus"
+  },
+  {
+   "title": "Call of Juarez",
+   "id": "1909524379",
+   "category": "Shooter",
+   "url": "https://www.gog.com/en/game/call_of_juarez"
+  },
+  {
+   "title": "Call of Juarez: Bound in Blood",
+   "id": "1770556474",
+   "category": "Shooter",
+   "url": "https://www.gog.com/en/game/call_of_juarez_bound_in_blood"
+  },
+  {
+   "title": "Captain Blood",
+   "id": "1293807013",
+   "category": "Action",
+   "url": "https://www.gog.com/en/game/captain_blood"
+  },
+  {
+   "title": "DOOM (2016)",
+   "id": "1390579243",
+   "category": "Shooter",
+   "url": "https://www.gog.com/en/game/doom_2016"
+  },
+  {
+   "title": "DOOM + DOOM II",
+   "id": "1413291984",
+   "category": "Shooter",
+   "url": "https://www.gog.com/en/game/doom_doom_ii"
+  },
+  {
+   "title": "DOOM I Enhanced",
+   "id": "2015545325"
+  },
+  {
+   "title": "DOOM II + Master Levels",
+   "id": "1435848814",
+   "category": "Shooter"
+  },
+  {
+   "title": "DOOM II Enhanced",
+   "id": "1426071866"
+  },
+  {
+   "title": "Fallout 3: Game of the Year Edition",
+   "id": "1454315831",
+   "category": "Role-playing",
+   "url": "https://www.gog.com/en/game/fallout_3_game_of_the_year_edition"
+  },
+  {
+   "title": "FATE: The Traitor Soul",
+   "id": "1595490147",
+   "category": "Role-playing",
+   "url": "https://www.gog.com/en/game/fate_the_traitor_soul"
+  },
+  {
+   "title": "Final Doom",
+   "id": "1435848742",
+   "category": "Shooter"
+  },
+  {
+   "title": "LEGO® Star Wars™ III - The Clone Wars™",
+   "id": "2119193622",
+   "category": "Action",
+   "url": "https://www.gog.com/en/game/lego_star_wars_the_clone_wars"
+  },
+  {
+   "title": "Mahokenshi",
+   "id": "1409800471",
+   "category": "Strategy",
+   "url": "https://www.gog.com/en/game/mahokenshi"
+  },
+  {
+   "title": "Meganoid",
+   "id": "1438861093",
+   "category": "Action",
+   "url": "https://www.gog.com/en/game/meganoid"
+  },
+  {
+   "title": "Middle-earth™: Shadow of Mordor™ Game of the Year Edition",
+   "id": "1213504814",
+   "category": "Action",
+   "url": "https://www.gog.com/en/game/middleearth_shadow_of_mordor"
+  },
+  {
+   "title": "Monster Train",
+   "id": "1304291300",
+   "category": "Strategy",
+   "url": "https://www.gog.com/en/game/monster_train"
+  },
+  {
+   "title": "Phantasie Memorial Set",
+   "id": "1919929332",
+   "category": "Role-playing",
+   "url": "https://www.gog.com/en/game/phantasie_memorial_set"
+  },
+  {
+   "title": "STAR WARS™ Battlefront™ II (Classic, 2005)",
+   "id": "1421404701",
+   "category": "Shooter",
+   "url": "https://www.gog.com/en/game/star_wars_battlefront_ii"
+  },
+  {
+   "title": "The Ultimate Doom",
+   "id": "1435827232",
+   "category": "Shooter"
+  },
+  {
+   "title": "THIEF: Definitive Edition",
+   "id": "1446830366",
+   "category": "Action",
+   "url": "https://www.gog.com/en/game/thief_definitive_edition"
+  },
+  {
+   "title": "Tomb Raider GOTY",
+   "id": "1724969043",
+   "category": "Action",
+   "url": "https://www.gog.com/en/game/tomb_raider_goty"
+  }
+ ]
+}

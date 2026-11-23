@@ -1,0 +1,118 @@
+{
+ "platform": "epic",
+ "device": "android",
+ "extract_date": "2026-11-23",
+ "count": 22,
+ "games": [
+  {
+   "title": "Botanicula",
+   "id": "352e01e9352b4ea088c505080dc15eb8",
+   "developer": "Amanita Design s.r.o."
+  },
+  {
+   "title": "Bouncemasters",
+   "id": "7cf9142001684affb7eeea509247edc7",
+   "developer": "JOYBITS LIMITED"
+  },
+  {
+   "title": "Boxes: Lost Fragments",
+   "id": "384bda37c6d64a789a330b537abdbdaa",
+   "developer": "Snapbreak Games AB"
+  },
+  {
+   "title": "CHUCHEL",
+   "id": "7e874dd2a7a941eabdf72755b42405db",
+   "developer": "Amanita Design s.r.o."
+  },
+  {
+   "title": "Construction Simulator 3",
+   "id": "7f96cc0f1f754046891bf0cb1e68b8db",
+   "developer": "Store Rider"
+  },
+  {
+   "title": "Dead Cells",
+   "id": "4e980122452a4b48a99a83126e226053",
+   "developer": "Playdigious"
+  },
+  {
+   "title": "Dumb Ways to Die",
+   "id": "5d2fcf73e12b42dca18ba8c1f556d5e8",
+   "developer": "PlaySide Studios LTD"
+  },
+  {
+   "title": "Guild of Dungeoneering Ultimate Edition",
+   "id": "18e223de9de54b8a8745d8e5b99d42b8",
+   "developer": "Gambrinous"
+  },
+  {
+   "title": "Knightica",
+   "id": "2aa3cfc522d846de8061d703e7eb02cf",
+   "developer": "Goblinz Studio SAS"
+  },
+  {
+   "title": "LIMBO",
+   "id": "8c7f64f350914a86ad38f7dccabc52c6",
+   "developer": "Playdead"
+  },
+  {
+   "title": "Loop Hero",
+   "id": "48b62bbee8744af8ba185d4da764f448",
+   "developer": "Playdigious"
+  },
+  {
+   "title": "Machinarium",
+   "id": "dc073fcd5c0a4b3e85b51ba598399be4",
+   "developer": "Amanita Design s.r.o."
+  },
+  {
+   "title": "Monument Valley",
+   "id": "6a5a9639d86d47c9a852f70652a3216e",
+   "developer": "ustwo games"
+  },
+  {
+   "title": "Potion Permit",
+   "id": "48b7421055b24814b8a50f2d9d298b1d",
+   "developer": "Playdigious"
+  },
+  {
+   "title": "Princess Farmer",
+   "id": "58718acac38443ad8f9e305e6afd108f",
+   "developer": "White Thorn Digital"
+  },
+  {
+   "title": "ScourgeBringer",
+   "id": "ccf5733f0614447184c72a0ba7ab2b8a",
+   "developer": "Plug In Digital SAS"
+  },
+  {
+   "title": "Shapez",
+   "id": "cbe0d1e6aefe40dabba7a9133d05457e",
+   "developer": "Playdigious"
+  },
+  {
+   "title": "Shotgun King: The Final Checkmate",
+   "id": "e57fb902cebf4b0d87164940d400d3a5",
+   "developer": "Plug In Digital SAS"
+  },
+  {
+   "title": "Skul: The Hero Slayer",
+   "id": "8c9633e69176480f845b92d8a00b905f",
+   "developer": "Playdigious"
+  },
+  {
+   "title": "The Darkside Detective A Fumble in the Dark",
+   "id": "f9447ea126004893ab504cb9444516b4",
+   "developer": "Akupara Games"
+  },
+  {
+   "title": "The Ouroboros King",
+   "id": "cacc3d1ec4eb4258a85e72915cab311b",
+   "developer": "Plug In Digital SAS"
+  },
+  {
+   "title": "Wonder Boy: The Dragon's Trap",
+   "id": "714b006b310a4564b4dec013bafafeab",
+   "developer": "Store Rider"
+  }
+ ]
+}

@@ -1,0 +1,413 @@
+{
+ "platform": "epic",
+ "device": "windows",
+ "extract_date": "2026-11-23",
+ "count": 81,
+ "games": [
+  {
+   "title": "Blood West",
+   "id": "311021f116f243a0b3e8d2dc2b6b90f9",
+   "developer": "Hyperstrange"
+  },
+  {
+   "title": "Borderlands 2",
+   "id": "Dodo",
+   "developer": "2K Games, Inc."
+  },
+  {
+   "title": "Botanicula",
+   "id": "d26da9e047e4440a80781f13a8b7c062",
+   "developer": "Amanita Design s.r.o."
+  },
+  {
+   "title": "Breathedge",
+   "id": "0a20ccd3f1b3464da750a4dbf8c80d7c",
+   "developer": "Hypetrain Digital"
+  },
+  {
+   "title": "Chivalry 2",
+   "id": "Peppermint",
+   "developer": "Tripwire Interactive"
+  },
+  {
+   "title": "Death's Gambit - Afterlife",
+   "id": "29d12cc907b148dd957a709f1414843e",
+   "developer": "Serenity Forge"
+  },
+  {
+   "title": "Defense Grid: The Awakening",
+   "id": "a434dcb20f0d439b93aaa31dac9e3210",
+   "developer": "Hidden Path"
+  },
+  {
+   "title": "Deus Ex - Mankind Divided",
+   "id": "2eaba703e63e4ed8bd2919ed552021d6",
+   "developer": "Crystal Dynamics, Inc."
+  },
+  {
+   "title": "Disco Elysium - The Final Cut",
+   "id": "7334aba246154b63857435cb9c7eecd5",
+   "developer": "ZA/UM"
+  },
+  {
+   "title": "DNF Duel",
+   "id": "82cdbdf05c61474d89c4f9e8a8bf0ea4",
+   "developer": "NEXON"
+  },
+  {
+   "title": "Dreamscaper",
+   "id": "a922e114727142e8b24d1499c274f223",
+   "developer": "Freedom Games"
+  },
+  {
+   "title": "Electrician Simulator",
+   "id": "019b8e62a48c4278ac5ca98d7986cd75",
+   "developer": "Gaming Factory"
+  },
+  {
+   "title": "Europa Universalis IV",
+   "id": "da0103e959e54d139d0c109ded3b3672",
+   "developer": "Paradox Interactive"
+  },
+  {
+   "title": "Fallout 2: A Post Nuclear Role Playing Game",
+   "id": "74034e8449f2470d9f45115f3a49f9aa",
+   "developer": "Bethesda Softworks LLC"
+  },
+  {
+   "title": "Fallout Tactics: Brotherhood of Steel",
+   "id": "908f75e7f1624819a70c27f543741dcd",
+   "developer": "Bethesda Softworks LLC"
+  },
+  {
+   "title": "Fallout: A Post Nuclear Role Playing Game",
+   "id": "f8ef168f3522419caad27d82878e0329",
+   "developer": "Bethesda Softworks LLC"
+  },
+  {
+   "title": "Fallout: New Vegas",
+   "id": "5daeb974a22a435988892319b3a4f476",
+   "developer": "Bethesda Softworks LLC"
+  },
+  {
+   "title": "Fashion Police Squad",
+   "id": "34207deee7704cae912ff861937af7ed",
+   "developer": "No More Robots"
+  },
+  {
+   "title": "Genshin Impact",
+   "id": "41869934302e4b8cafac2d3c0e7c293d",
+   "developer": "COGNOSPHERE PTE. LTD."
+  },
+  {
+   "title": "Ghostrunner 2",
+   "id": "cc3213f280df4b428e85b771c09d1891",
+   "developer": "505 Games"
+  },
+  {
+   "title": "Gigantic: Rampage Edition",
+   "id": "d4d31e492ea24c0fbcc239c0bb29aed8",
+   "developer": "Arc Games"
+  },
+  {
+   "title": "Gloomhaven",
+   "id": "1bcd791d54684eb29ed32ad1c0593d12",
+   "developer": "TWIN SAILS INTERACTIVE"
+  },
+  {
+   "title": "Gravity Circuit",
+   "id": "78847ec04bb348ba83d00a44896b80a3",
+   "developer": "Plug In Digital SAS"
+  },
+  {
+   "title": "Heroes & Generals WWII",
+   "id": "8836f84a700140bb86103556cd7db0d4",
+   "developer": "TLM Partners, Inc"
+  },
+  {
+   "title": "High On Life",
+   "id": "bf6280c4650b492c8a601faa1d2b59bc",
+   "developer": "Squanch Games"
+  },
+  {
+   "title": "Hogwarts Legacy",
+   "id": "fa4240e57a3c46b39f169041b7811293",
+   "developer": "Warner Bros."
+  },
+  {
+   "title": "Horizon Chase Turbo",
+   "id": "bb406082b69a47208489d3616b22b5c2",
+   "developer": "AQUIRIS"
+  },
+  {
+   "title": "Hyper Echelon",
+   "id": "4c94a9ec733d40ccb0da37f43f0f9592",
+   "developer": "GangoGames LLC"
+  },
+  {
+   "title": "Jurassic World Evolution 2",
+   "id": "70883ed009994efe86d00a5fb8f2b52e",
+   "developer": "Frontier Developments"
+  },
+  {
+   "title": "Kao the Kangaroo",
+   "id": "7763cb8916654651a50593a813ae7c38",
+   "developer": "Tate Multimedia"
+  },
+  {
+   "title": "LEGO® 2K Drive",
+   "id": "86982262b877446db74928dce458c3e7",
+   "developer": "2K Games, Inc."
+  },
+  {
+   "title": "Let's Build a Zoo",
+   "id": "f7a456368be244ddbb2424774917a3a8",
+   "developer": "No More Robots"
+  },
+  {
+   "title": "Loop Hero",
+   "id": "f7a0ebb44f93430fb1c4388a395eba96",
+   "developer": "Devolver Digital, Inc."
+  },
+  {
+   "title": "Mark of the Deep",
+   "id": "8117701582b549ea90c864b157adc969",
+   "developer": "Light Up Games"
+  },
+  {
+   "title": "Mothergunship",
+   "id": "ee5c6a659d0f478fba0049fa44429a1f",
+   "developer": "Terrible Posture Games, Inc."
+  },
+  {
+   "title": "Murder by Numbers",
+   "id": "2c3dd568cada4c229753f550a44dcf2b",
+   "developer": "The Irregular Corporation"
+  },
+  {
+   "title": "Never Alone (Kisima Ingitchuna)",
+   "id": "f38de9fa4c6d43eabac080942cb394a1",
+   "developer": "E-Line Media"
+  },
+  {
+   "title": "Nobody Wants to Die",
+   "id": "7ba101a6119b460b9f272a0d02197ee0",
+   "developer": "Plaion"
+  },
+  {
+   "title": "Offworld Trading Company",
+   "id": "Snapper",
+   "developer": "Stardock Entertainment, Inc"
+  },
+  {
+   "title": "Outer Wilds",
+   "id": "Starfish",
+   "developer": "Annapurna Interactive"
+  },
+  {
+   "title": "Q.U.B.E. 10th Anniversary",
+   "id": "440abc2d035f494a9bf172ed29f9fa2f",
+   "developer": "Toxic Games"
+  },
+  {
+   "title": "Q.U.B.E. 2",
+   "id": "Auk",
+   "developer": "Ten Hut Games"
+  },
+  {
+   "title": "Rebel Galaxy",
+   "id": "Weaver",
+   "developer": "SNEG"
+  },
+  {
+   "title": "Red Dead Redemption 2",
+   "id": "Heather",
+   "developer": "Rockstar Games"
+  },
+  {
+   "title": "Return to Ash",
+   "id": "e7d7c393d6f7499596e7d268a58b1970",
+   "developer": "Serenity Forge"
+  },
+  {
+   "title": "RiMS Racing",
+   "id": "c67664a6227d4ceca58c70562073990d",
+   "developer": "Nacon"
+  },
+  {
+   "title": "Rival Stars Horse Racing : Desktop Edition",
+   "id": "d9da08fd23dd4078a520c9923780c153",
+   "developer": "Prodigy Design Ltd"
+  },
+  {
+   "title": "Rocket League®",
+   "id": "Sugar",
+   "developer": "Psyonix LLC"
+  },
+  {
+   "title": "Rustler - Grand Theft Horse",
+   "id": "6dfbeb5a6f2e42b5a6a5dcf7a8269e9c",
+   "developer": "Games Operators S.A."
+  },
+  {
+   "title": "Scourgebringer",
+   "id": "bf363d9625a5406f904d925f3e613327",
+   "developer": "Plug In Digital SAS"
+  },
+  {
+   "title": "Shadow Tactics: Blades of the Shogun",
+   "id": "Fangtooth",
+   "developer": "Daedalic Entertainment"
+  },
+  {
+   "title": "Shogun Showdown",
+   "id": "1fe58090c33849fab06bc2e441dabf2e",
+   "developer": "Goblinz Studio SAS"
+  },
+  {
+   "title": "Sid Meier's Civilization VI",
+   "id": "Kinglet",
+   "developer": "2K Games, Inc."
+  },
+  {
+   "title": "SKALD Against the Black Priory",
+   "id": "1cac0c3169fa4c018f98e517cd0717bb",
+   "developer": "Raw Fury"
+  },
+  {
+   "title": "Sniper Ghost Warrior Contracts",
+   "id": "f8b6cc851ab34f5f9f07654426dc2429",
+   "developer": "CI Games "
+  },
+  {
+   "title": "Songs of Silence",
+   "id": "f3a0b50da2dd4226b8308c7e5fa1fbb6",
+   "developer": "Chimera Entertainment GmbH"
+  },
+  {
+   "title": "Space Grunts: Chrono Shard",
+   "id": "263aeee122aa4be7b5d4c67230900fff",
+   "developer": "THQ Nordic Mobile"
+  },
+  {
+   "title": "Steelrising",
+   "id": "800ab4cd7b3b4b1cae4b5bff81cdfa1a",
+   "developer": "Nacon"
+  },
+  {
+   "title": "The Dungeon Of Naheulbeuk: The Amulet Of Chaos",
+   "id": "02fac38ee2614c8ba276b1ea7c1acd7c",
+   "developer": "Plug In Digital SAS"
+  },
+  {
+   "title": "The Elder Scrolls Online",
+   "id": "4d0ff75b922447649057c237c0bd1545",
+   "developer": "Bethesda Softworks LLC"
+  },
+  {
+   "title": "The Escapists",
+   "id": "Peony",
+   "developer": "Team17 Digital Ltd"
+  },
+  {
+   "title": "The Outer Worlds",
+   "id": "Rosemallow",
+   "developer": "Microsoft"
+  },
+  {
+   "title": "The Outer Worlds: Spacer's Choice Edition",
+   "id": "cb3bf7ba89574a66ae3b795e039d4dbc",
+   "developer": "Microsoft"
+  },
+  {
+   "title": "theHunter: Call of the Wild™",
+   "id": "4f0c34d469bb47b2bcf5b377f47ccfe3",
+   "developer": "Avalanche Studios Group AB"
+  },
+  {
+   "title": "Tiny Tina's Assault on Dragon Keep: A Wonderlands One-shot Adventure",
+   "id": "9e296d276ad447108f12c654c3341d59",
+   "developer": "2K Games, Inc."
+  },
+  {
+   "title": "Tiny Tina's Wonderlands",
+   "id": "eb6ddfb245f647e2bb6902f52f38a535",
+   "developer": "2K Games, Inc."
+  },
+  {
+   "title": "Total War: Rome II - Emperor Edition",
+   "id": "634a920ea3bb4aad8746b59c50603890",
+   "developer": "SEGA of Europe"
+  },
+  {
+   "title": "Total War: THREE KINGDOMS",
+   "id": "769f2fee68e9477180da900ccccbbcf0",
+   "developer": "SEGA of Europe"
+  },
+  {
+   "title": "Touch Type Tale",
+   "id": "fe118ed0362040c994b510da064876ca",
+   "developer": "Mythwright"
+  },
+  {
+   "title": "Train Sim World 2",
+   "id": "dd75b5c168d546cc869582c0389f0a1d",
+   "developer": "Dovetail Games"
+  },
+  {
+   "title": "Trine 2: Complete Story",
+   "id": "bb9fca58dae446b8af86c668dd7a7234",
+   "developer": "Frozenbyte"
+  },
+  {
+   "title": "Trine 3: The Artifacts of Power",
+   "id": "81fbec1949fb4458bbe5c2711d0d64f6",
+   "developer": "Frozenbyte"
+  },
+  {
+   "title": "Trine 4: Definitive Edition",
+   "id": "80510c874abe43149f3db85756351da6",
+   "developer": "Frozenbyte"
+  },
+  {
+   "title": "Trine Enchanted Edition",
+   "id": "91eac4ac00304bcc9d7d4a55a95894b3",
+   "developer": "Frozenbyte"
+  },
+  {
+   "title": "Verdun",
+   "id": "38c0129b680e4843b4807b98bad67027",
+   "developer": "BlackMill Games B.V."
+  },
+  {
+   "title": "Viewfinder",
+   "id": "17979201bdd845f0ab53d1d62d841dbf",
+   "developer": "Thunderful Publishing"
+  },
+  {
+   "title": "Weird West: Definitive Edition",
+   "id": "5ab7c9b39f81481c88dce1e4f106a594",
+   "developer": "Devolver Digital, Inc."
+  },
+  {
+   "title": "Werewolf: The Apocalypse - Earthblood",
+   "id": "Teal",
+   "developer": "Nacon"
+  },
+  {
+   "title": "Wild Card Football",
+   "id": "6fd5e6a8632c499fa2657cf650c96b14",
+   "developer": "Saber Interactive"
+  },
+  {
+   "title": "Wildgate",
+   "id": "0ad0ed7b851c46378f9fcac07b72b548",
+   "developer": "Dreamhaven, Inc."
+  },
+  {
+   "title": "WRC Generations",
+   "id": "96aa9b93b32241209c2786bd7e0ea3a6",
+   "developer": "Nacon"
+  }
+ ]
+}

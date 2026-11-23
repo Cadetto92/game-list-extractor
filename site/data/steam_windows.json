@@ -1,0 +1,168 @@
+{
+ "platform": "steam",
+ "device": "windows",
+ "extract_date": "2026-11-23",
+ "count": 32,
+ "games": [
+  {
+   "title": "Aimlabs",
+   "id": "714010",
+   "url": "https://store.steampowered.com/app/714010"
+  },
+  {
+   "title": "ARK: Survival Evolved",
+   "id": "346110",
+   "url": "https://store.steampowered.com/app/346110"
+  },
+  {
+   "title": "ARK: Survival Of The Fittest",
+   "id": "407530",
+   "url": "https://store.steampowered.com/app/407530"
+  },
+  {
+   "title": "Besiege",
+   "id": "346010",
+   "url": "https://store.steampowered.com/app/346010"
+  },
+  {
+   "title": "BioShock Infinite",
+   "id": "8870",
+   "url": "https://store.steampowered.com/app/8870"
+  },
+  {
+   "title": "Black Mesa",
+   "id": "362890",
+   "url": "https://store.steampowered.com/app/362890"
+  },
+  {
+   "title": "Counter-Strike 2",
+   "id": "730",
+   "url": "https://store.steampowered.com/app/730"
+  },
+  {
+   "title": "Counter-Strike: Source",
+   "id": "240",
+   "url": "https://store.steampowered.com/app/240"
+  },
+  {
+   "title": "Day of Defeat: Source",
+   "id": "300",
+   "url": "https://store.steampowered.com/app/300"
+  },
+  {
+   "title": "Dota 2",
+   "id": "570",
+   "url": "https://store.steampowered.com/app/570"
+  },
+  {
+   "title": "Enter the Gungeon",
+   "id": "311690",
+   "url": "https://store.steampowered.com/app/311690"
+  },
+  {
+   "title": "Foxhole",
+   "id": "505460",
+   "url": "https://store.steampowered.com/app/505460"
+  },
+  {
+   "title": "Gamer Career Tycoon",
+   "id": "567750",
+   "url": "https://store.steampowered.com/app/567750"
+  },
+  {
+   "title": "Half-Life 2",
+   "id": "220",
+   "url": "https://store.steampowered.com/app/220"
+  },
+  {
+   "title": "Half-Life 2: Deathmatch",
+   "id": "320",
+   "url": "https://store.steampowered.com/app/320"
+  },
+  {
+   "title": "Half-Life Deathmatch: Source",
+   "id": "360",
+   "url": "https://store.steampowered.com/app/360"
+  },
+  {
+   "title": "Indiana Jones and the Fate of Atlantis",
+   "id": "6010",
+   "url": "https://store.steampowered.com/app/6010"
+  },
+  {
+   "title": "KovaaK's",
+   "id": "824270",
+   "url": "https://store.steampowered.com/app/824270"
+  },
+  {
+   "title": "Left 4 Dead 2",
+   "id": "550",
+   "url": "https://store.steampowered.com/app/550"
+  },
+  {
+   "title": "Magicka",
+   "id": "42910",
+   "url": "https://store.steampowered.com/app/42910"
+  },
+  {
+   "title": "Mass Effect™ Legendary Edition",
+   "id": "1328670",
+   "url": "https://store.steampowered.com/app/1328670"
+  },
+  {
+   "title": "Path of Exile",
+   "id": "238960",
+   "url": "https://store.steampowered.com/app/238960"
+  },
+  {
+   "title": "PAYDAY 2",
+   "id": "218620",
+   "url": "https://store.steampowered.com/app/218620"
+  },
+  {
+   "title": "Portal",
+   "id": "400",
+   "url": "https://store.steampowered.com/app/400"
+  },
+  {
+   "title": "Skul: The Hero Slayer",
+   "id": "1147560",
+   "url": "https://store.steampowered.com/app/1147560"
+  },
+  {
+   "title": "Skullgirls 2nd Encore",
+   "id": "245170",
+   "url": "https://store.steampowered.com/app/245170"
+  },
+  {
+   "title": "Tactical Intervention",
+   "id": "51100",
+   "url": "https://store.steampowered.com/app/51100"
+  },
+  {
+   "title": "Tales of Escape",
+   "id": "587860",
+   "url": "https://store.steampowered.com/app/587860"
+  },
+  {
+   "title": "Team Fortress 2",
+   "id": "440",
+   "url": "https://store.steampowered.com/app/440"
+  },
+  {
+   "title": "The Elder Scrolls V: Skyrim Special Edition",
+   "id": "489830",
+   "url": "https://store.steampowered.com/app/489830"
+  },
+  {
+   "title": "This War of Mine",
+   "id": "282070",
+   "url": "https://store.steampowered.com/app/282070"
+  },
+  {
+   "title": "Titanfall® 2",
+   "id": "1237970",
+   "url": "https://store.steampowered.com/app/1237970"
+  }
+ ]
+}
