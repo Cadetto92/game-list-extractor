@@ -7,7 +7,8 @@ import sys
 import urllib.parse
 import urllib.request
 
-from export_utils import load_env, write_csv
+from export_utils import load_env, write_csv, write_site_data
+from publish_games import offer_publish
 
 OUTPUT = "steam_games.csv"
 API_URL = "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/"
@@ -35,6 +36,15 @@ def to_row(game):
     ]
 
 
+def to_site(game):
+    # Playtime is deliberately left out: it is personal and the site data is public.
+    return {
+        "title": game.get("name", ""),
+        "id": game["appid"],
+        "url": f"https://store.steampowered.com/app/{game['appid']}",
+    }
+
+
 def main():
     load_env()
     api_key = os.environ.get("STEAM_API_KEY") or getpass.getpass("Steam API key: ").strip()
@@ -51,6 +61,8 @@ def main():
 
     games.sort(key=lambda game: (game.get("name") or "").lower())
     write_csv(OUTPUT, ["Title", "App ID", "Playtime (hours)", "Store URL"], [to_row(g) for g in games])
+    write_site_data("steam", "windows", [to_site(g) for g in games])
+    offer_publish()
 
 
 if __name__ == "__main__":

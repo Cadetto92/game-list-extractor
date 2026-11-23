@@ -6,7 +6,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from export_utils import write_csv
+from export_utils import write_csv, write_site_data
+from publish_games import offer_publish
 
 OUTPUT = "gog_games.csv"
 # Public client credentials of the GOG Galaxy app, as used by Heroic's gogdl
@@ -87,6 +88,11 @@ def to_row(product):
     ]
 
 
+def to_site(product):
+    row = to_row(product)
+    return {"title": row[0], "id": row[1], "category": row[2], "url": row[3]}
+
+
 def main():
     print("1) Open this link and log in to GOG:\n")
     print(LOGIN_URL + "\n")
@@ -104,6 +110,8 @@ def main():
 
     games.sort(key=lambda product: (product.get("title") or "").lower())
     write_csv(OUTPUT, ["Title", "Product ID", "Category", "Store URL"], [to_row(p) for p in games])
+    write_site_data("gog", "windows", [to_site(p) for p in games])
+    offer_publish()
 
 
 if __name__ == "__main__":

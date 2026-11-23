@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>My game library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>My game library</h1>
+    <p id="summary" class="muted">Loading…</p>
+  </header>
+  <main>
+    <nav id="tabs" role="tablist" aria-label="Platforms"></nav>
+    <nav id="devices" class="devices" aria-label="Epic device" hidden></nav>
+    <input id="search" type="search" placeholder="Search by title" aria-label="Search by title" autocomplete="off">
+    <p id="count" class="muted"></p>
+    <table>
+      <thead><tr><th>Title</th><th>Details</th><th id="platform-head">Platforms</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p id="error" class="muted" hidden></p>
+  </main>
+  <footer class="muted">
+    <a href="https://github.com/Cadetto92/game-list-extractor">Source on GitHub</a>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

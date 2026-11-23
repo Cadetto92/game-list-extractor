@@ -1,13 +1,14 @@
 """Export the list of games you own on Epic to CSV files."""
 
+import importlib.util
 import json
-import os
 import shutil
 import subprocess
 import sys
 import time
 
-from export_utils import write_csv
+from export_utils import write_csv, write_site_data
+from publish_games import offer_publish
 
 WINDOWS_OUTPUT = "epic_games_windows.csv"
 ANDROID_OUTPUT = "epic_games_android.csv"
@@ -42,13 +43,23 @@ def to_row(game):
     return [game.get("app_title", ""), game.get("app_name", ""), metadata.get("developer", "")]
 
 
+def to_site(game):
+    metadata = game.get("metadata") or {}
+    return {
+        "title": game.get("app_title", ""),
+        "id": game.get("app_name", ""),
+        "developer": metadata.get("developer", ""),
+    }
+
+
 def find_legendary():
-    """Return the path to Legendary, preferring the copy installed next to this Python."""
-    # The venv's Scripts folder is only on PATH while the venv is activated.
-    return (
-        shutil.which("legendary", path=os.path.dirname(sys.executable))
-        or shutil.which("legendary")
-    )
+    """Return the command that starts Legendary, as a list, or None if it is not installed."""
+    # Running it as a module avoids legendary.exe, which a Windows Application Control
+    # policy can block. It also needs no PATH entry or activated venv.
+    if importlib.util.find_spec("legendary") is not None:
+        return [sys.executable, "-m", "legendary.cli"]
+    exe = shutil.which("legendary")
+    return [exe] if exe else None
 
 
 def main():
@@ -58,7 +69,7 @@ def main():
 
     # No --force-refresh: Legendary still lists new purchases, and reusing its cached
     # metadata avoids one request per game, each of which can time out.
-    cmd = [legendary, "list", "--json", "-T"]
+    cmd = [*legendary, "list", "--json", "-T"]
     for attempt in range(1, ATTEMPTS + 1):
         result = subprocess.run(cmd, capture_output=True, text=True)
         if result.returncode == 0:
@@ -101,6 +112,9 @@ def main():
 
     write_csv(WINDOWS_OUTPUT, HEADER, [to_row(game) for game in windows])
     write_csv(ANDROID_OUTPUT, HEADER, [to_row(game) for game in android])
+    write_site_data("epic", "windows", [to_site(game) for game in windows])
+    write_site_data("epic", "android", [to_site(game) for game in android])
+    offer_publish()
 
 
 if __name__ == "__main__":
