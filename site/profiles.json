@@ -1,0 +1,7 @@
+{
+ "profiles": [
+  {"platform": "Steam", "label": "Friend code", "value": "34170837", "note": "Steam name: Cadetto"},
+  {"platform": "Epic", "label": "Display name", "value": "Cadetto92"},
+  {"platform": "GOG", "label": "Username", "value": "Cadetto", "url": "https://www.gog.com/u/Cadetto"}
+ ]
+}

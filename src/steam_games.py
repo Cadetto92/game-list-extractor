@@ -1,4 +1,4 @@
-"""Export the list of games owned on a Steam account to a CSV file."""
+"""Export the list of games owned on a Steam account to a CSV file and website data."""
 
 import getpass
 import json

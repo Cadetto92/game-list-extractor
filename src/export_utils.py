@@ -1,4 +1,4 @@
-"""Helpers shared by the game library exporters."""
+"""Helpers shared by the exporters: CSV writing, website data writing and .env loading."""
 
 import csv
 import json

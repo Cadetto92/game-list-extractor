@@ -1,4 +1,4 @@
-"""Export the list of games you own on GOG to a CSV file."""
+"""Export the list of games you own on GOG to a CSV file and website data."""
 
 import json
 import sys

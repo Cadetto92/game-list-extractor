@@ -1,4 +1,4 @@
-"""Export the list of games you own on Epic to CSV files."""
+"""Export the list of games you own on Epic to CSV files and website data."""
 
 import importlib.util
 import json

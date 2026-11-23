@@ -83,14 +83,16 @@ function render() {
 
   const tabs = $("tabs");
   tabs.replaceChildren(
-    ...["all", ...platforms].map((p) =>
-      button(
+    ...["all", ...platforms].map((p) => {
+      const tab = button(
         (p === "all" ? "All" : PLATFORM_NAMES[p]) + " (" + countFor(p) + ")",
         state.tab === p,
         () => { state.tab = p; state.device = "all"; render(); },
         "aria-selected"
-      )
-    )
+      );
+      tab.classList.add("tab-" + p);
+      return tab;
+    })
   );
   tabs.querySelectorAll("button").forEach((b) => b.setAttribute("role", "tab"));
 
@@ -107,7 +109,7 @@ function render() {
   }
 
   const games = visibleGames();
-  $("count").textContent = games.length + " games";
+  $("count").textContent = games.length + (games.length === 1 ? " game" : " games");
   $("platform-head").hidden = state.tab !== "all" && state.tab !== "epic";
 
   const rows = games.map(({ game, labels }) => {
@@ -123,7 +125,9 @@ function render() {
     }
     tr.append(title, el("td", [game.developer, game.category].filter(Boolean).join(" · ")));
     const chips = el("td");
-    labels.forEach((label) => chips.append(el("span", label, "chip")));
+    labels.forEach((label) =>
+      chips.append(el("span", label, "chip chip-" + label.split(" ")[0].toLowerCase()))
+    );
     chips.hidden = state.tab !== "all" && state.tab !== "epic";
     tr.append(chips);
     return tr;
@@ -131,5 +135,49 @@ function render() {
   $("rows").replaceChildren(...rows);
 }
 
+// Optional "add me as a friend" section, read from profiles.json. Fails silently if absent.
+async function loadProfiles() {
+  try {
+    const data = await (await fetch("profiles.json")).json();
+    const isText = (value) => typeof value === "string" && value.trim() !== "";
+    const valid = (data.profiles || []).filter(
+      (p) => p && isText(p.platform) && isText(p.label) && isText(p.value)
+    );
+    const items = valid.map((profile) => {
+      const li = el("li", undefined, "p-" + String(profile.platform).toLowerCase().replace(/[^a-z]/g, ""));
+      li.append(el("span", profile.platform, "platform"), el("span", profile.label + ":"));
+      const href = safeUrl(profile.url);
+      if (href) {
+        const a = el("a", profile.value);
+        a.href = href; a.target = "_blank"; a.rel = "noopener noreferrer";
+        li.append(a);
+      } else {
+        li.append(el("strong", profile.value));
+      }
+      if (profile.note) li.append(el("span", "(" + profile.note + ")", "muted"));
+      const copy = el("button", "Copy");
+      copy.type = "button";
+      copy.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(profile.value);
+          copy.textContent = "Copied";
+        } catch (error) {
+          copy.textContent = "Copy failed";
+        }
+        setTimeout(() => { copy.textContent = "Copy"; }, 1500);
+      });
+      li.append(copy);
+      return li;
+    });
+    if (items.length) {
+      $("profiles").replaceChildren(...items);
+      $("friends").hidden = false;
+    }
+  } catch (error) {
+    // No profiles file: the section stays hidden.
+  }
+}
+
 $("search").addEventListener("input", (event) => { state.query = event.target.value; render(); });
 load();
+loadProfiles();
