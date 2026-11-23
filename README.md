@@ -4,7 +4,7 @@ Python command-line tools that export owned games from Epic, GOG, and Steam to C
 
 ## Website
 
-My game list is published at: **<https://my-game-list-cadetto.vercel.app>** (hosted free on Vercel). It has the tabs All / Epic / GOG / Steam, with a Windows / Android switch on the Epic tab, a title search, and an **Add me as a friend** box with my Steam, Epic and GOG names. It works on phones too.
+My game list is published at: **<https://my-game-list-cadetto.vercel.app>** (hosted free on Vercel). It is a simple list of games with a coloured platform tag on each (`Steam`, `GOG`, `Epic`, and `Epic (Android)` for the Android version: Windows is the default, so it is not named). It has the tabs All / Epic / GOG / Steam, a Windows / Android switch on the Epic tab, a title search, and an **Add me as a friend** box with my Steam, Epic and GOG names. It works on phones too.
 
 ## Project layout
 
@@ -57,7 +57,7 @@ By default only the game lists in `site/data/` are published. Changes to the web
 
 ### What is published
 
-Only game information: title, store ID, developer or category, store link, the extract date and counts, per platform and device. The exporters never write anything else. Never published by the exporters: `.env`, the Steam API key and SteamID64, any account name or credentials, playtime, and the CSV files in `results/`.
+Only game information: title, store ID, developer or category, store link, the extract date and counts, per platform and device. The site shows only the title and the platform tag; developer and category stay in the data files. The exporters never write anything else. Never published by the exporters: `.env`, the Steam API key and SteamID64, any account name or credentials, playtime, and the CSV files in `results/`.
 
 The one exception is the optional **Add me as a friend** section, filled by hand in `site/profiles.json`: a Steam friend code, an Epic display name and a GOG username, so that people can add you. Edit or delete that file to change or remove the section. Only put names there that you are happy for strangers to see: never a login name, email, password or API key. Note that a Steam friend code is your Steam account number, from which your SteamID64 can be worked out.
 

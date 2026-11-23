@@ -44,8 +44,11 @@ function visibleGames() {
       const key = game.title.trim().toLowerCase();
       if (!merged.has(key)) merged.set(key, { game, labels: new Set() });
       const entry = merged.get(key);
+      // Windows is the default device, so only Android is named in the label.
       entry.labels.add(
-        list.platform === "epic" ? "Epic (" + DEVICE_NAMES[list.device] + ")" : PLATFORM_NAMES[list.platform]
+        list.platform === "epic" && list.device !== "windows"
+          ? "Epic (" + DEVICE_NAMES[list.device] + ")"
+          : PLATFORM_NAMES[list.platform]
       );
       if (!entry.game.url && game.url) entry.game = game;
     }
@@ -110,6 +113,7 @@ function render() {
 
   const games = visibleGames();
   $("count").textContent = games.length + (games.length === 1 ? " game" : " games");
+  $("empty").hidden = games.length !== 0;
   $("platform-head").hidden = state.tab !== "all" && state.tab !== "epic";
 
   const rows = games.map(({ game, labels }) => {
@@ -123,9 +127,9 @@ function render() {
     } else {
       title.textContent = game.title;
     }
-    tr.append(title, el("td", [game.developer, game.category].filter(Boolean).join(" · ")));
+    tr.append(title);
     const chips = el("td");
-    labels.forEach((label) =>
+    [...labels].sort().forEach((label) =>
       chips.append(el("span", label, "chip chip-" + label.split(" ")[0].toLowerCase()))
     );
     chips.hidden = state.tab !== "all" && state.tab !== "epic";
