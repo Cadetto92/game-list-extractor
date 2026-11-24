@@ -4,7 +4,7 @@ Python command-line tools that export owned games from Epic, GOG, and Steam to C
 
 ## Website
 
-My game list is published at: **<https://my-game-list-cadetto.vercel.app>** (hosted free on Vercel). It is a simple list of games with a coloured platform tag on each (`Steam`, `GOG`, `Epic`, and `Epic (Android)` for the Android version: Windows is the default, so it is not named). It has the tabs All / Epic / GOG / Steam, a Windows / Android switch on the Epic tab, a title search, and an **Add me as a friend** box with my Steam, Epic and GOG names. It works on phones too.
+My game list is published at: **<https://my-game-list-cadetto.vercel.app>** (hosted free on Vercel). It is a simple list of games with a picture (the store banner) before each title and a coloured platform tag on each (`Steam`, `GOG`, `Epic`, and `Epic (Android)` for the Android version: Windows is the default, so it is not named). It has the tabs All / Epic / GOG / Steam, a Windows / Android switch on the Epic tab, a title search, and an **Add me as a friend** box with my Steam, Epic and GOG names. It works on phones too.
 
 ## Project layout
 
@@ -19,7 +19,7 @@ site/               Static website (index.html, style.css, app.js)
 site/data/          Published game lists as JSON, written by the exporters (committed)
 site/profiles.json  Hand-edited friend names shown on the site (Steam, Epic, GOG)
 vercel.json         Tells Vercel to serve the site/ folder
-results/            CSV files written by the exporters (created on first run, ignored by git)
+results/            CSV files written by the exporters, plus raw JSON replies with --json (created on first run, ignored by git)
 epic_exclude.txt    App IDs to leave out of the Epic export
 .env.example        Template for the Steam settings in .env
 CLAUDE.md           Notes for future Claude Code sessions (privacy rules, conventions)
@@ -37,11 +37,33 @@ Each file starts with the extract date and the number of games, then a blank lin
 "Extract date","2026-10-15"
 "Number of games","2"
 
-"Title","App ID","Developer"
-"Borderlands 2","Dodo","2K Games, Inc."
+"Title","App ID","Developer","Image URL"
+"Borderlands 2","Dodo","2K Games, Inc.","https://cdn1.epicgames.com/..."
 ```
 
 To open a file in Google Sheets, use **File > Import > Upload**. It handles the quotes and the commas inside values.
+
+## How the data is retrieved
+
+No browser plugin and no scraping. All three platforms return JSON.
+
+| Platform | Mechanism | Official? | Auth |
+|---|---|---|---|
+| Steam | Direct HTTPS GET, JSON | Yes, documented | API key + SteamID64 |
+| GOG | Direct HTTPS GET, JSON | No, reverse-engineered | OAuth2 code flow, Bearer token |
+| Epic | Subprocess call to Legendary CLI | No, Legendary wraps a private API | Legendary's own login |
+
+- **Steam** (`src/steam_games.py`): one GET to `https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/`, with your Web API key in the `key` parameter. Your profile's "Game details" must be public.
+- **GOG** (`src/gog_games.py`): GOG's internal API, as used by the GOG Galaxy app and website. You log in on `auth.gog.com` in your browser and paste the redirect URL (it contains `code=`). The script exchanges the code for an access token, then calls `embed.gog.com/account/getFilteredProducts` page by page with `Authorization: Bearer <token>`. The client ID and secret are the public ones of the GOG Galaxy app (as used by Heroic's gogdl); they are not personal. GOG may change this API without notice.
+- **Epic** (`src/epic_games.py`): the script does not call Epic itself. It runs [Legendary](https://github.com/derrod/legendary) (`python -m legendary.cli list --json -T`) and reads its JSON output. Legendary handles the login (`legendary auth`) and talks to Epic's private launcher API.
+
+## Pictures
+
+Each game has an `Image URL` column in the CSV and an `image` field in `site/data/`: the store's own banner (Steam `header.jpg`, GOG product card, Epic wide box art resized to 480 px). The website shows these links directly (hotlinking). Nothing is downloaded or stored in this repository, and a game whose picture fails to load just shows an empty box. Only `https` links on the stores' picture hosts are kept: an exporter drops any other link with a warning (that game just has no picture), and `publish-games` refuses to publish one. A changed picture link is reported as an update, like a changed title.
+
+## Raw replies (optional)
+
+Add `--json` to any exporter (for example `python src\steam_games.py --json`) to also save the full reply from the platform as `results/epic_games.json`, `results/gog_games.json` or `results/steam_games.json`, so you can see what is available. Without the option nothing is written. These files are for you only: `results/` is ignored by git and never published. Sensitive values are removed first: values under keys such as `key`, `token`, `secret`, `password`, `email`, `username` or `steamid`, your API key and SteamID64 from `.env`, the GOG token and any e-mail address found in text become `[REDACTED]`. Playtime is kept in the Steam file, as it is private.
 
 ## Publishing the website
 
@@ -53,11 +75,13 @@ Each exporter also writes its list to `site/data/` (for example `site/data/epic_
 
 Add `--no-publish` to an exporter (for example `export-steam-games --no-publish`) to skip the question. `publish-games` does the same check, commit and push on its own, for example to publish several refreshed lists in one commit.
 
-By default only the game lists in `site/data/` are published. Changes to the website itself (`site/index.html`, `style.css`, `app.js`) and to `site/profiles.json` are listed as "NOT included" so that unfinished page edits are never pushed with a list update. When you want to publish them, run `publish-games --site`.
+Before every publish, `publish-games` also checks that `site/` holds only the website files (`index.html`, `style.css`, `app.js`, `profiles.json` and the lists in `data/`) and that no file contains a value from your `.env`. A stray file stops the publish and is named in the message.
+
+Everything under `site/` is published: the game lists in `site/data/`, the website itself (`site/index.html`, `style.css`, `app.js`) and `site/profiles.json`. Website file changes are listed under "Website files changed" before you confirm. Preview the page locally before you answer `y` (command below).
 
 ### What is published
 
-Only game information: title, store ID, developer or category, store link, the extract date and counts, per platform and device. The site shows only the title and the platform tag; developer and category stay in the data files. The exporters never write anything else. Never published by the exporters: `.env`, the Steam API key and SteamID64, any account name or credentials, playtime, and the CSV files in `results/`.
+Only game information: title, store ID, developer or category, store link, picture link, the extract date and counts, per platform and device. The site shows only the picture, the title and the platform tag; developer and category stay in the data files. The exporters never write anything else. Never published by the exporters: `.env`, the Steam API key and SteamID64, any account name or credentials, playtime, and the CSV files in `results/`.
 
 The one exception is the optional **Add me as a friend** section, filled by hand in `site/profiles.json`: a Steam friend code, an Epic display name and a GOG username, so that people can add you. Edit or delete that file to change or remove the section. Only put names there that you are happy for strangers to see: never a login name, email, password or API key. Note that a Steam friend code is your Steam account number, from which your SteamID64 can be worked out.
 
@@ -112,7 +136,7 @@ export-epic-games
 
 ### Results
 
-The exporter writes two files with the columns `Title`, `App ID`, `Developer`:
+The exporter writes two files with the columns `Title`, `App ID`, `Developer`, `Image URL`:
 
 - `results/epic_games_windows.csv`: every game that is not Android-only.
 - `results/epic_games_android.csv`: every game released on Android.
@@ -144,7 +168,7 @@ The code works only once and expires quickly. If sign-in fails, run the command 
 
 ### Results
 
-The exporter writes `results/gog_games.csv` with the columns `Title`, `Product ID`, `Category`, `Store URL`. `Category` and `Store URL` are empty when GOG does not provide them, for example for games not sold on their own. `site/data/gog_windows.json` is written for the website.
+The exporter writes `results/gog_games.csv` with the columns `Title`, `Product ID`, `Category`, `Store URL`, `Image URL`. `Category` and `Store URL` are empty when GOG does not provide them, for example for games not sold on their own. `site/data/gog_windows.json` is written for the website.
 
 ## Steam
 
@@ -174,6 +198,6 @@ If the key or the SteamID64 is not set in `.env` or the environment, the command
 
 ### Results
 
-The exporter writes `results/steam_games.csv` with the columns `Title`, `App ID`, `Playtime (hours)`, `Store URL`. Free games you have played are included. `site/data/steam_windows.json` is written for the website, without the playtime.
+The exporter writes `results/steam_games.csv` with the columns `Title`, `App ID`, `Playtime (hours)`, `Store URL`, `Image URL`. Free games you have played are included. `site/data/steam_windows.json` is written for the website, without the playtime.
 
 If no games are returned, check your SteamID64 and the **Game details** privacy setting.

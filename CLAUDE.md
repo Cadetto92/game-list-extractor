@@ -15,7 +15,7 @@ This repository is **public**. Only game lists and the optional friend names may
 
 ## Workflow rules
 
-- Do not commit or push unless the user asks. The user usually publishes with `publish-games` (or the prompt at the end of an exporter), which commits and pushes `site/data/` only. Website files (`site/*`, `site/profiles.json`) need `--site`.
+- Do not commit or push unless the user asks. The user usually publishes with `publish-games` (or the prompt at the end of an exporter), which commits and pushes everything under `site/` (game lists, page code, `profiles.json`) after the privacy checks.
 - Test publishing and git behaviour in a throwaway repository in the scratchpad, never in this repo.
 - The `refs/agents/...` refs in `.git` are local checkpoints from the agent host. Leave them alone; they are not pushed.
 
@@ -24,7 +24,7 @@ This repository is **public**. Only game lists and the optional friend names may
 - Plain Python 3.9+, standard library only (Legendary is an optional dependency for Epic). Site is vanilla HTML/CSS/JS with no build step; build page text with `textContent`, never `innerHTML`.
 - User-facing text (README, messages, comments) is in English, short and plain. Keep the README in step with any behaviour change, including prompts and options.
 - Messages must not suggest something is published when it is only saved locally.
-- The site is dark, "geeky" themed and must stay responsive (check 390 px and 320 px wide). It is a plain list: title plus a platform tag, no other columns.
+- The site is dark, "geeky" themed and must stay responsive (check 390 px and 320 px wide). It is a plain list: a thumbnail, the title and a platform tag, no other columns. Thumbnails are hotlinked from the store CDNs (never downloaded or committed) and must have a fixed box so rows stay aligned.
 - Keep tabs and tags visually different: tabs and switches are outlined rounded buttons; platform tags are flat square badges with a dot on each side. Epic Windows shows as "Epic" and only Android is named ("Epic (Android)"). An empty search shows "No game matches your search." and the footer link stays small and grey so it cannot be mistaken for a game.
 - Windows 11, PowerShell, VS Code. Application Control may block pip's `.exe` launchers, so run scripts as `python src\<name>.py` and start Legendary through `python -m legendary.cli` (already done in `epic_games.py`).
 - When reading git output on Windows, force UTF-8 (see `git()` in `publish_games.py`): titles contain symbols such as ® and ™.

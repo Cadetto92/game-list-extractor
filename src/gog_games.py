@@ -6,10 +6,11 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from export_utils import write_csv, write_site_data
+from export_utils import parse_args, write_csv, write_raw_json, write_site_data
 from publish_games import offer_publish
 
 OUTPUT = "gog_games.csv"
+RAW_OUTPUT = "gog_games.json"
 # Public client credentials of the GOG Galaxy app, as used by Heroic's gogdl
 # (https://github.com/Heroic-Games-Launcher/heroic-gogdl). GOG rejects any other value.
 CLIENT_ID = "46899977096215655"
@@ -78,6 +79,15 @@ def get_games(token):
     return games
 
 
+IMAGE_SUFFIX = "_product_card_v2_mobile_slider_639.jpg"
+
+
+def image_url(product):
+    """GOG gives a protocol-relative base path; a size suffix turns it into a picture."""
+    image = product.get("image")
+    return f"https:{image}{IMAGE_SUFFIX}" if image else ""
+
+
 def to_row(product):
     url = product.get("url")
     return [
@@ -85,15 +95,17 @@ def to_row(product):
         product.get("id", ""),
         product.get("category", ""),
         "https://www.gog.com" + url if url else "",
+        image_url(product),
     ]
 
 
 def to_site(product):
     row = to_row(product)
-    return {"title": row[0], "id": row[1], "category": row[2], "url": row[3]}
+    return {"title": row[0], "id": row[1], "category": row[2], "url": row[3], "image": row[4]}
 
 
 def main():
+    options = parse_args(__doc__)
     print("1) Open this link and log in to GOG:\n")
     print(LOGIN_URL + "\n")
     pasted = input("2) Paste the URL of the page you land on (contains 'code='): ")
@@ -108,8 +120,10 @@ def main():
     except Exception as error:
         sys.exit(f"Could not read your library ({describe_error(error)}).")
 
+    if options.json:
+        write_raw_json(RAW_OUTPUT, {"products": games}, [token])
     games.sort(key=lambda product: (product.get("title") or "").lower())
-    write_csv(OUTPUT, ["Title", "Product ID", "Category", "Store URL"], [to_row(p) for p in games])
+    write_csv(OUTPUT, ["Title", "Product ID", "Category", "Store URL", "Image URL"], [to_row(p) for p in games])
     write_site_data("gog", "windows", [to_site(p) for p in games])
     offer_publish()
 

@@ -6,13 +6,15 @@ import shutil
 import subprocess
 import sys
 import time
+import urllib.parse
 
-from export_utils import write_csv, write_site_data
+from export_utils import parse_args, write_csv, write_raw_json, write_site_data
 from publish_games import offer_publish
 
+RAW_OUTPUT = "epic_games.json"
 WINDOWS_OUTPUT = "epic_games_windows.csv"
 ANDROID_OUTPUT = "epic_games_android.csv"
-HEADER = ["Title", "App ID", "Developer"]
+HEADER = ["Title", "App ID", "Developer", "Image URL"]
 EXCLUDE = "epic_exclude.txt"
 ATTEMPTS = 3
 RETRY_DELAY = 5
@@ -38,9 +40,28 @@ def platforms(game):
     }
 
 
+def image_url(game):
+    """Return a small wide picture of the game, or "" when Epic has none."""
+    images = {i.get("type"): i.get("url") for i in (game.get("metadata") or {}).get("keyImages") or []}
+    url = images.get("DieselGameBox") or images.get("DieselGameBoxWide")
+    if not url:
+        return ""
+    # Epic's originals are 2560 px wide PNGs (over 1 MB); its CDN resizes them on request.
+    parts = urllib.parse.urlsplit(url)
+    query = urllib.parse.parse_qsl(parts.query)
+    query = [(k, v) for k, v in query if k not in ("h", "w", "resize")] + [("h", "270"), ("resize", "1"), ("w", "480")]
+    # Titles can put spaces in the path; "%" stays so that encoded characters are not encoded twice.
+    return urllib.parse.urlunsplit((
+        parts.scheme, parts.netloc, urllib.parse.quote(parts.path, safe="/%"),
+        urllib.parse.urlencode(query), "",
+    ))
+
+
 def to_row(game):
     metadata = game.get("metadata") or {}
-    return [game.get("app_title", ""), game.get("app_name", ""), metadata.get("developer", "")]
+    return [
+        game.get("app_title", ""), game.get("app_name", ""), metadata.get("developer", ""), image_url(game),
+    ]
 
 
 def to_site(game):
@@ -49,6 +70,7 @@ def to_site(game):
         "title": game.get("app_title", ""),
         "id": game.get("app_name", ""),
         "developer": metadata.get("developer", ""),
+        "image": image_url(game),
     }
 
 
@@ -63,6 +85,7 @@ def find_legendary():
 
 
 def main():
+    options = parse_args(__doc__)
     legendary = find_legendary()
     if not legendary:
         sys.exit("Legendary not found. Install the Epic extra and authenticate with: legendary auth")
@@ -93,6 +116,8 @@ def main():
         )
 
     games = json.loads(result.stdout)
+    if options.json:
+        write_raw_json(RAW_OUTPUT, games)
 
     excluded = read_excluded()
     unknown = excluded - {game.get("app_name", "") for game in games}

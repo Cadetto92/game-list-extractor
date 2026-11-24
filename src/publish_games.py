@@ -5,7 +5,9 @@ import os
 import subprocess
 import sys
 
-from export_utils import GAME_FIELDS, INDEX_FILE, LIST_FIELDS, SITE_DATA_DIR, load_env
+from export_utils import (
+    GAME_FIELDS, INDEX_FILE, LIST_FIELDS, SITE_DATA_DIR, is_allowed_image, load_env, parse_args,
+)
 
 SECRET_VARIABLES = ("STEAM_API_KEY", "STEAM_ID")
 PROFILES_FILE = os.path.join("site", "profiles.json")
@@ -15,6 +17,8 @@ PROFILE_REQUIRED = ("platform", "label", "value")
 FRIEND_CODE_LABEL = "friend code"
 # A SteamID64 is this base plus the 32-bit account number, which is also the Steam friend code.
 STEAM_ID64_BASE = 76561197960265728
+# The only files allowed in site/ besides the lists in site/data/*.json.
+SITE_FILES = {"site/index.html", "site/style.css", "site/app.js", "site/profiles.json"}
 PLATFORM_NAMES = {"epic": "Epic", "gog": "GOG", "steam": "Steam"}
 # Maximum number of titles printed (and committed) per category, to keep messages readable.
 MAX_LISTED = 40
@@ -59,11 +63,46 @@ def validate():
             extra = set(game) - set(GAME_FIELDS)
             if extra:
                 sys.exit(f"{path}: unexpected game fields {sorted(extra)}")
+            check_image(path, game)
         for secret in secrets:
             if secret in text:
                 sys.exit(f"{path}: contains a value from your .env. Not publishing.")
+    check_site_files(secrets)
     validate_profiles(secrets)
     return names
+
+
+def check_image(path, game):
+    """Exit unless the game's picture URL (if any) is https on a known store picture host."""
+    image = game.get("image")
+    if image is not None and not is_allowed_image(image):
+        sys.exit(f"{path}: image URL for '{game['title']}' is not https on a known store host.")
+
+
+def check_site_files(secrets):
+    """Exit if site/ holds a file that is not part of the website, or any file with a .env value.
+
+    Everything under site/ is committed, so a stray file (a note, a copied .env) must never go
+    out unnoticed.
+    """
+    listed = git("ls-files", "-z", "--cached", "--others", "--exclude-standard", "--", "site")
+    paths = sorted({p for p in listed.split("\0") if p and os.path.isfile(p)})
+    unexpected = [
+        p for p in paths
+        if p not in SITE_FILES and not (p.startswith("site/data/") and p.endswith(".json") and p.count("/") == 2)
+    ]
+    if unexpected:
+        sys.exit(
+            "Unexpected files in site/, nothing was published. Move or delete them, or add them "
+            "to SITE_FILES in publish_games.py if they belong to the website:\n  "
+            + "\n  ".join(unexpected)
+        )
+    for path in paths:
+        with open(path, "rb") as file:
+            content = file.read()
+        for secret in secrets:
+            if secret.encode("utf-8") in content:
+                sys.exit(f"{path}: contains a value from your .env. Not publishing.")
 
 
 def validate_profiles(secrets):
@@ -163,7 +202,12 @@ def describe_update(old, new):
     for field in GAME_FIELDS:
         if field in ("id", "title"):
             continue
-        if old.get(field) != new.get(field):
+        if old.get(field) == new.get(field):
+            continue
+        if field == "image":
+            # URLs are long, so only say what happened.
+            parts.append("image updated" if old.get(field) else "image added")
+        else:
             parts.append(f"{field}: '{old.get(field, '')}' -> '{new.get(field, '')}'")
     return f"{new['title']} ({', '.join(parts)})"
 
@@ -238,12 +282,10 @@ def last_published(scope):
 def publish(prompt):
     """Validate, show what changed since the last commit, ask, then commit and push.
 
-    By default only site/data (the game lists) is published. Website files such as the page
-    code and profiles.json are published only with the --site option, so half-finished page
-    edits are never pushed together with a game list update.
+    Everything under site/ is published: the game lists and the website files (page code and
+    profiles.json), all after the privacy checks.
     """
-    include_site = "--site" in sys.argv
-    scope = "site" if include_site else "site/data"
+    scope = "site"
     load_env()
     names = validate()
     lists = f"{len(names)} {'list contains' if len(names) == 1 else 'lists contain'}"
@@ -257,19 +299,13 @@ def publish(prompt):
         sys.exit("Other files are already staged, nothing was published:\n  " + "\n  ".join(outside))
 
     changes = [change for change in map(compare, names) if change]
-    site_files = site_file_changes()
-    files = site_files if include_site else []
-    skipped = "" if include_site or not site_files else (
-        "\nWebsite files changed but NOT included (add --site to publish them):\n"
-        + "\n".join(f"  ~ {path}" for path in site_files) + "\n"
-    )
+    files = site_file_changes()
     since = last_published(scope)
     reference = f" ({since})" if since else ""
     if not changes and not files:
-        what = "game lists or website files" if include_site else "game lists"
         print(
-            f"\nNo changes in any of the {what} compared with the last published version"
-            + reference + ".\nNothing to publish." + ("\n" + skipped if skipped else "")
+            "\nNo changes in any of the game lists or website files compared with the last "
+            f"published version{reference}.\nNothing to publish."
         )
         return
 
@@ -278,8 +314,6 @@ def publish(prompt):
         print("\n".join(format_changes(changes)))
     if files:
         print(("\n" if changes else "") + "Website files changed:\n" + "\n".join(f"  ~ {path}" for path in files))
-    if skipped:
-        print(skipped)
 
     try:
         answer = input("\n" + prompt)
@@ -308,6 +342,7 @@ def offer_publish():
 
 
 def main():
+    parse_args(__doc__, exporter=False)
     publish("Publish to the website now? This will commit and push these changes to GitHub. [y/N] ")
 
 
