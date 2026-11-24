@@ -1,168 +1,200 @@
 {
  "platform": "steam",
  "device": "windows",
- "extract_date": "2026-11-23",
+ "extract_date": "2026-11-24",
  "count": 32,
  "games": [
   {
    "title": "Aimlabs",
    "id": "714010",
-   "url": "https://store.steampowered.com/app/714010"
+   "url": "https://store.steampowered.com/app/714010",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/714010/header.jpg"
   },
   {
    "title": "ARK: Survival Evolved",
    "id": "346110",
-   "url": "https://store.steampowered.com/app/346110"
+   "url": "https://store.steampowered.com/app/346110",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/346110/header.jpg"
   },
   {
    "title": "ARK: Survival Of The Fittest",
    "id": "407530",
-   "url": "https://store.steampowered.com/app/407530"
+   "url": "https://store.steampowered.com/app/407530",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/407530/header.jpg"
   },
   {
    "title": "Besiege",
    "id": "346010",
-   "url": "https://store.steampowered.com/app/346010"
+   "url": "https://store.steampowered.com/app/346010",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/346010/header.jpg"
   },
   {
    "title": "BioShock Infinite",
    "id": "8870",
-   "url": "https://store.steampowered.com/app/8870"
+   "url": "https://store.steampowered.com/app/8870",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/8870/header.jpg"
   },
   {
    "title": "Black Mesa",
    "id": "362890",
-   "url": "https://store.steampowered.com/app/362890"
+   "url": "https://store.steampowered.com/app/362890",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/362890/header.jpg"
   },
   {
    "title": "Counter-Strike 2",
    "id": "730",
-   "url": "https://store.steampowered.com/app/730"
+   "url": "https://store.steampowered.com/app/730",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg"
   },
   {
    "title": "Counter-Strike: Source",
    "id": "240",
-   "url": "https://store.steampowered.com/app/240"
+   "url": "https://store.steampowered.com/app/240",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/240/header.jpg"
   },
   {
    "title": "Day of Defeat: Source",
    "id": "300",
-   "url": "https://store.steampowered.com/app/300"
+   "url": "https://store.steampowered.com/app/300",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/300/header.jpg"
   },
   {
    "title": "Dota 2",
    "id": "570",
-   "url": "https://store.steampowered.com/app/570"
+   "url": "https://store.steampowered.com/app/570",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/570/header.jpg"
   },
   {
    "title": "Enter the Gungeon",
    "id": "311690",
-   "url": "https://store.steampowered.com/app/311690"
+   "url": "https://store.steampowered.com/app/311690",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/311690/header.jpg"
   },
   {
    "title": "Foxhole",
    "id": "505460",
-   "url": "https://store.steampowered.com/app/505460"
+   "url": "https://store.steampowered.com/app/505460",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/505460/header.jpg"
   },
   {
    "title": "Gamer Career Tycoon",
    "id": "567750",
-   "url": "https://store.steampowered.com/app/567750"
+   "url": "https://store.steampowered.com/app/567750",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/567750/header.jpg"
   },
   {
    "title": "Half-Life 2",
    "id": "220",
-   "url": "https://store.steampowered.com/app/220"
+   "url": "https://store.steampowered.com/app/220",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/220/header.jpg"
   },
   {
    "title": "Half-Life 2: Deathmatch",
    "id": "320",
-   "url": "https://store.steampowered.com/app/320"
+   "url": "https://store.steampowered.com/app/320",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/320/header.jpg"
   },
   {
    "title": "Half-Life Deathmatch: Source",
    "id": "360",
-   "url": "https://store.steampowered.com/app/360"
+   "url": "https://store.steampowered.com/app/360",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/360/header.jpg"
   },
   {
    "title": "Indiana Jones and the Fate of Atlantis",
    "id": "6010",
-   "url": "https://store.steampowered.com/app/6010"
+   "url": "https://store.steampowered.com/app/6010",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/6010/header.jpg"
   },
   {
    "title": "KovaaK's",
    "id": "824270",
-   "url": "https://store.steampowered.com/app/824270"
+   "url": "https://store.steampowered.com/app/824270",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/824270/header.jpg"
   },
   {
    "title": "Left 4 Dead 2",
    "id": "550",
-   "url": "https://store.steampowered.com/app/550"
+   "url": "https://store.steampowered.com/app/550",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/550/header.jpg"
   },
   {
    "title": "Magicka",
    "id": "42910",
-   "url": "https://store.steampowered.com/app/42910"
+   "url": "https://store.steampowered.com/app/42910",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/42910/header.jpg"
   },
   {
    "title": "Mass Effect™ Legendary Edition",
    "id": "1328670",
-   "url": "https://store.steampowered.com/app/1328670"
+   "url": "https://store.steampowered.com/app/1328670",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/1328670/header.jpg"
   },
   {
    "title": "Path of Exile",
    "id": "238960",
-   "url": "https://store.steampowered.com/app/238960"
+   "url": "https://store.steampowered.com/app/238960",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/238960/header.jpg"
   },
   {
    "title": "PAYDAY 2",
    "id": "218620",
-   "url": "https://store.steampowered.com/app/218620"
+   "url": "https://store.steampowered.com/app/218620",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/218620/header.jpg"
   },
   {
    "title": "Portal",
    "id": "400",
-   "url": "https://store.steampowered.com/app/400"
+   "url": "https://store.steampowered.com/app/400",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg"
   },
   {
    "title": "Skul: The Hero Slayer",
    "id": "1147560",
-   "url": "https://store.steampowered.com/app/1147560"
+   "url": "https://store.steampowered.com/app/1147560",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/1147560/header.jpg"
   },
   {
    "title": "Skullgirls 2nd Encore",
    "id": "245170",
-   "url": "https://store.steampowered.com/app/245170"
+   "url": "https://store.steampowered.com/app/245170",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/245170/header.jpg"
   },
   {
    "title": "Tactical Intervention",
    "id": "51100",
-   "url": "https://store.steampowered.com/app/51100"
+   "url": "https://store.steampowered.com/app/51100",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/51100/header.jpg"
   },
   {
    "title": "Tales of Escape",
    "id": "587860",
-   "url": "https://store.steampowered.com/app/587860"
+   "url": "https://store.steampowered.com/app/587860",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/587860/header.jpg"
   },
   {
    "title": "Team Fortress 2",
    "id": "440",
-   "url": "https://store.steampowered.com/app/440"
+   "url": "https://store.steampowered.com/app/440",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/440/header.jpg"
   },
   {
    "title": "The Elder Scrolls V: Skyrim Special Edition",
    "id": "489830",
-   "url": "https://store.steampowered.com/app/489830"
+   "url": "https://store.steampowered.com/app/489830",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/489830/header.jpg"
   },
   {
    "title": "This War of Mine",
    "id": "282070",
-   "url": "https://store.steampowered.com/app/282070"
+   "url": "https://store.steampowered.com/app/282070",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/282070/header.jpg"
   },
   {
    "title": "Titanfall® 2",
    "id": "1237970",
-   "url": "https://store.steampowered.com/app/1237970"
+   "url": "https://store.steampowered.com/app/1237970",
+   "image": "https://cdn.akamai.steamstatic.com/steam/apps/1237970/header.jpg"
   }
  ]
 }

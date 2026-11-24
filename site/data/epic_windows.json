@@ -1,413 +1,494 @@
 {
  "platform": "epic",
  "device": "windows",
- "extract_date": "2026-11-23",
+ "extract_date": "2026-11-24",
  "count": 81,
  "games": [
   {
    "title": "Blood West",
    "id": "311021f116f243a0b3e8d2dc2b6b90f9",
-   "developer": "Hyperstrange"
+   "developer": "Hyperstrange",
+   "image": "https://cdn1.epicgames.com/spt-assets/ea39630551474fdab17e71a31e1e9db5/blood-west-19z6t.png?h=270&resize=1&w=480"
   },
   {
    "title": "Borderlands 2",
    "id": "Dodo",
-   "developer": "2K Games, Inc."
+   "developer": "2K Games, Inc.",
+   "image": "https://cdn1.epicgames.com/f4a7772a4da24870a3ea6dfb8aeac662/item/BL2_Wide-2560x1440-e4f153cd792f973e00583178d8408128.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Botanicula",
    "id": "d26da9e047e4440a80781f13a8b7c062",
-   "developer": "Amanita Design s.r.o."
+   "developer": "Amanita Design s.r.o.",
+   "image": "https://cdn1.epicgames.com/spt-assets/ffe4df6e32664927a3423e4bde3b4051/botanicula-1wpga.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Breathedge",
    "id": "0a20ccd3f1b3464da750a4dbf8c80d7c",
-   "developer": "Hypetrain Digital"
+   "developer": "Hypetrain Digital",
+   "image": "https://cdn1.epicgames.com/08ae29e4f70a4b62aa055e383381aa82/item/egs-breathedge-redruinssoftworks-s1-2560x1440-76fd08cd9c2d-2560x1440-783424f6d4a7f32a0e75fc074f2f928e.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Chivalry 2",
    "id": "Peppermint",
-   "developer": "Tripwire Interactive"
+   "developer": "Tripwire Interactive",
+   "image": "https://cdn1.epicgames.com/item/bd46d4ce259349e5bd8b3ded20274737/EGS_Chivalry2_TornBannerStudios_S1_2560x1440-4248ed263080045c7cb13960711c5f58?h=270&resize=1&w=480"
   },
   {
    "title": "Death's Gambit - Afterlife",
    "id": "29d12cc907b148dd957a709f1414843e",
-   "developer": "Serenity Forge"
+   "developer": "Serenity Forge",
+   "image": "https://cdn1.epicgames.com/spt-assets/58c8925d94e440c7b0b4206635272579/deaths-gambit--afterlife-1v244.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Defense Grid: The Awakening",
    "id": "a434dcb20f0d439b93aaa31dac9e3210",
-   "developer": "Hidden Path"
+   "developer": "Hidden Path",
+   "image": "https://cdn1.epicgames.com/0dabb0f14acf4fef84bd2b2bf3085dfc/item/EGS_DefenseGridTheAwakening_HiddenPathEntertainment_G2_00-1920x1080-7b6cc3b4533d512f4e58800527b1c0a0.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Deus Ex - Mankind Divided",
    "id": "2eaba703e63e4ed8bd2919ed552021d6",
-   "developer": "Crystal Dynamics, Inc."
+   "developer": "Crystal Dynamics, Inc.",
+   "image": "https://cdn1.epicgames.com/spt-assets/c47ffdc5b1cb42fc83bd9ea42861b800/deus-ex--mankind-divided-29w5i.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Disco Elysium - The Final Cut",
    "id": "7334aba246154b63857435cb9c7eecd5",
-   "developer": "ZA/UM"
+   "developer": "ZA/UM",
+   "image": "https://cdn1.epicgames.com/spt-assets/9003e1ade0b14e8688b08030e7a335fd/disco-elysium-1dbyw.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "DNF Duel",
    "id": "82cdbdf05c61474d89c4f9e8a8bf0ea4",
-   "developer": "NEXON"
+   "developer": "NEXON",
+   "image": "https://cdn1.epicgames.com/spt-assets/98cdc7484b264021ad8a3a6e1e721989/dnf-duel-xp2nm.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Dreamscaper",
    "id": "a922e114727142e8b24d1499c274f223",
-   "developer": "Freedom Games"
+   "developer": "Freedom Games",
+   "image": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_Dreamscaper_Afterburner_S1_2560x1440-862b7cad318cfa0110ae32c3f8caf74f?h=270&resize=1&w=480"
   },
   {
    "title": "Electrician Simulator",
    "id": "019b8e62a48c4278ac5ca98d7986cd75",
-   "developer": "Gaming Factory"
+   "developer": "Gaming Factory",
+   "image": "https://cdn1.epicgames.com/spt-assets/d0be4faac92a49ebae039c0e0d386e42/electrician-simulator-wzzjd.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Europa Universalis IV",
    "id": "da0103e959e54d139d0c109ded3b3672",
-   "developer": "Paradox Interactive"
+   "developer": "Paradox Interactive",
+   "image": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_EuropaUniversalisIV_ParadoxDevelopmentStudioParadoxTinto_S3_2560x1440-aa3002ec221d43dcd7e49f5458e74766?h=270&resize=1&w=480"
   },
   {
    "title": "Fallout 2: A Post Nuclear Role Playing Game",
    "id": "74034e8449f2470d9f45115f3a49f9aa",
-   "developer": "Bethesda Softworks LLC"
+   "developer": "Bethesda Softworks LLC",
+   "image": "https://cdn1.epicgames.com/item/aae22da1fb884fa395b25bc30dd61faf/EGS_Fallout2APostNuclearRolePlayingGame_BethesdaGameStudios_S1_2560x1440-4cfbea54e590ef00cb9c440ac3b3a36c?h=270&resize=1&w=480"
   },
   {
    "title": "Fallout Tactics: Brotherhood of Steel",
    "id": "908f75e7f1624819a70c27f543741dcd",
-   "developer": "Bethesda Softworks LLC"
+   "developer": "Bethesda Softworks LLC",
+   "image": "https://cdn1.epicgames.com/item/b90be973f6e74975ac1a6ff15dbfd0b3/EGS_FalloutTacticsBrotherhoodofSteel_BethesdaGameStudios_S1_2560x1440-36cd52e1846a29ad9f0cf60dff64d210?h=270&resize=1&w=480"
   },
   {
    "title": "Fallout: A Post Nuclear Role Playing Game",
    "id": "f8ef168f3522419caad27d82878e0329",
-   "developer": "Bethesda Softworks LLC"
+   "developer": "Bethesda Softworks LLC",
+   "image": "https://cdn1.epicgames.com/item/2e412cfcbd954e7180930e9784a47e18/EGS_FalloutAPostNuclearRolePlayingGame_BethesdaGameStudios_S1_2560x1440-548598863fb854e957d7706a24c6d381?h=270&resize=1&w=480"
   },
   {
    "title": "Fallout: New Vegas",
    "id": "5daeb974a22a435988892319b3a4f476",
-   "developer": "Bethesda Softworks LLC"
+   "developer": "Bethesda Softworks LLC",
+   "image": "https://cdn1.epicgames.com/item/3428aaab2c674c98b3acb789dcfaa548/EGS_FalloutNewVegas_ObsidianEntertainment_S1_2560x1440-7d7f9ea355650139d9ec6cc3cff97f5f?h=270&resize=1&w=480"
   },
   {
    "title": "Fashion Police Squad",
    "id": "34207deee7704cae912ff861937af7ed",
-   "developer": "No More Robots"
+   "developer": "No More Robots",
+   "image": "https://cdn1.epicgames.com/item/65d31d60510a49629a0b52e93da8416a/EGS_FashionPoliceSquad_MopefulGames_S1_2560x1440-bec6dfac399eaa451dba21eb99975ab7?h=270&resize=1&w=480"
   },
   {
    "title": "Genshin Impact",
    "id": "41869934302e4b8cafac2d3c0e7c293d",
-   "developer": "COGNOSPHERE PTE. LTD."
+   "developer": "COGNOSPHERE PTE. LTD.",
+   "image": "https://cdn1.epicgames.com/spt-assets/99dc46c68ea14324964a856d18dcac5b/genshin-impact-y8r0c.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Ghostrunner 2",
    "id": "cc3213f280df4b428e85b771c09d1891",
-   "developer": "505 Games"
+   "developer": "505 Games",
+   "image": "https://cdn1.epicgames.com/item/708f57aaa04b42ef885be16c8288f0ac/EGS_Ghostrunner2PrePurchase_OneMoreLevel_S1_2560x1440-15845148fae1d0cfd7f3e98c9b3ba6ba?h=270&resize=1&w=480"
   },
   {
    "title": "Gigantic: Rampage Edition",
    "id": "d4d31e492ea24c0fbcc239c0bb29aed8",
-   "developer": "Arc Games"
+   "developer": "Arc Games",
+   "image": "https://cdn1.epicgames.com/spt-assets/6630e3dcc72a4e2285e91ca48aa0eb4b/gigantic-rampage-edition-1nkcs.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Gloomhaven",
    "id": "1bcd791d54684eb29ed32ad1c0593d12",
-   "developer": "TWIN SAILS INTERACTIVE"
+   "developer": "TWIN SAILS INTERACTIVE",
+   "image": "https://cdn1.epicgames.com/spt-assets/ef2777467a3c49059a076e42fd9b41f0/gloomhaven-offer-9j1in.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Gravity Circuit",
    "id": "78847ec04bb348ba83d00a44896b80a3",
-   "developer": "Plug In Digital SAS"
+   "developer": "Plug In Digital SAS",
+   "image": "https://cdn1.epicgames.com/spt-assets/c259931bc98344a1a16427cb079f049f/gravity-circuit-offer-bngjv.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Heroes & Generals WWII",
    "id": "8836f84a700140bb86103556cd7db0d4",
-   "developer": "TLM Partners, Inc"
+   "developer": "TLM Partners, Inc",
+   "image": "https://cdn1.epicgames.com/item/c3e63401d6ba410493de31ed69a798a1/EGS_HeroesGeneralsWWII_TLMPartners_S1_2560x1440-d1b416aae0c121727122fd69b2281abc?h=270&resize=1&w=480"
   },
   {
    "title": "High On Life",
    "id": "bf6280c4650b492c8a601faa1d2b59bc",
-   "developer": "Squanch Games"
+   "developer": "Squanch Games",
+   "image": "https://cdn1.epicgames.com/spt-assets/8ae3e6daa99b4f54aa17551d1818571f/high-on-life-offer-ebv0h.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Hogwarts Legacy",
    "id": "fa4240e57a3c46b39f169041b7811293",
-   "developer": "Warner Bros."
+   "developer": "Warner Bros.",
+   "image": "https://cdn1.epicgames.com/item/e97659b501af4e3981d5430dad170911/EGS_HogwartsLegacy_AvalancheSoftware_S1_2560x1440-aa80981dd7c9b3f26b12606974a76dba?h=270&resize=1&w=480"
   },
   {
    "title": "Horizon Chase Turbo",
    "id": "bb406082b69a47208489d3616b22b5c2",
-   "developer": "AQUIRIS"
+   "developer": "AQUIRIS",
+   "image": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_HorizonChaseTurbo_AQUIRIS_S1_2560x1440-1e6041993df289505da364dfe77dd561?h=270&resize=1&w=480"
   },
   {
    "title": "Hyper Echelon",
    "id": "4c94a9ec733d40ccb0da37f43f0f9592",
-   "developer": "GangoGames LLC"
+   "developer": "GangoGames LLC",
+   "image": "https://cdn1.epicgames.com/spt-assets/866f5f0834324794a87759b5f4854636/hyper-echelon-11ykz.png?h=270&resize=1&w=480"
   },
   {
    "title": "Jurassic World Evolution 2",
    "id": "70883ed009994efe86d00a5fb8f2b52e",
-   "developer": "Frontier Developments"
+   "developer": "Frontier Developments",
+   "image": "https://cdn1.epicgames.com/item/4817ba5c11504724ba4d5817c8995dff/EGS_JurassicWorldEvolution2_FrontierDevelopments_S1_2560x1440-4103be22950c498c9687d9457d9e0815?h=270&resize=1&w=480"
   },
   {
    "title": "Kao the Kangaroo",
    "id": "7763cb8916654651a50593a813ae7c38",
-   "developer": "Tate Multimedia"
+   "developer": "Tate Multimedia",
+   "image": "https://cdn1.epicgames.com/spt-assets/4a2dcb55ecca496aaaf328f60263bb56/kao-the-kangaroo-offer-1jj1n.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "LEGO® 2K Drive",
    "id": "86982262b877446db74928dce458c3e7",
-   "developer": "2K Games, Inc."
+   "developer": "2K Games, Inc.",
+   "image": "https://cdn1.epicgames.com/item/130de7f2c9bd4d65bd7e52b8600aaad0/EGS_LEGO2KDrive_VisualConceptsEntertainment_S1_2560x1440-80c6a72c2fd0e440d98df519c86a5baa?h=270&resize=1&w=480"
   },
   {
    "title": "Let's Build a Zoo",
    "id": "f7a456368be244ddbb2424774917a3a8",
-   "developer": "No More Robots"
+   "developer": "No More Robots",
+   "image": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_LetsBuildAZoo_Springloaded_S1_2560x1440-0fd216bea3b2356b701c483e6635b96b?h=270&resize=1&w=480"
   },
   {
    "title": "Loop Hero",
    "id": "f7a0ebb44f93430fb1c4388a395eba96",
-   "developer": "Devolver Digital, Inc."
+   "developer": "Devolver Digital, Inc.",
+   "image": "https://cdn1.epicgames.com/ff50f85ed609454e80ac46d9496da34d/item/EGS_TheLichhasthrowntheworldintoatimelessloop_FourQuarters_S1-2560x1440-dd971b1a2d79b2984c22a3b7c66c60da.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Mark of the Deep",
    "id": "8117701582b549ea90c864b157adc969",
-   "developer": "Light Up Games"
+   "developer": "Light Up Games",
+   "image": "https://cdn1.epicgames.com/spt-assets/83a240506a884c10ad8fb99694e57a0d/mark-of-the-deep-1i22x.png?h=270&resize=1&w=480"
   },
   {
    "title": "Mothergunship",
    "id": "ee5c6a659d0f478fba0049fa44429a1f",
-   "developer": "Terrible Posture Games, Inc."
+   "developer": "Terrible Posture Games, Inc.",
+   "image": "https://cdn1.epicgames.com/salesEvent/salesEvent/egs-mothergunship-terribleposturegames-s1-2560x1440-fa17afd9d70b_2560x1440-0202fbd2d45da63b7f072a3076e62e3a?h=270&resize=1&w=480"
   },
   {
    "title": "Murder by Numbers",
    "id": "2c3dd568cada4c229753f550a44dcf2b",
-   "developer": "The Irregular Corporation"
+   "developer": "The Irregular Corporation",
+   "image": "https://cdn1.epicgames.com/a0c5d9d8a9a940e8a8f63118c7323210/item/EGS_MurderbyNumbers_Mediatonic_S1-2560x1440-c20572a6efa8b71deac98ce598f1fc6c.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Never Alone (Kisima Ingitchuna)",
    "id": "f38de9fa4c6d43eabac080942cb394a1",
-   "developer": "E-Line Media"
+   "developer": "E-Line Media",
+   "image": "https://cdn1.epicgames.com/item/b13f6a1e5121469d8a825947b759339d/EGS_NeverAloneKisimaIngitchuna_UpperOneGamesELineMedia_S1_2560x1440-97a1d9c3e47e439ea05e900feaa4a892?h=270&resize=1&w=480"
   },
   {
    "title": "Nobody Wants to Die",
    "id": "7ba101a6119b460b9f272a0d02197ee0",
-   "developer": "Plaion"
+   "developer": "Plaion",
+   "image": "https://cdn1.epicgames.com/spt-assets/dece0016082647a6af5759dbbedfc8eb/nobody-wants-to-die-1szhy.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Offworld Trading Company",
    "id": "Snapper",
-   "developer": "Stardock Entertainment, Inc"
+   "developer": "Stardock Entertainment, Inc",
+   "image": "https://cdn1.epicgames.com/e8882546f28e4832af823c646aed232e/item/Diesel_productv2_offworld-trading-company_home_EGS_MohawkGames_OffworldTradingCompany_S1-2560x1440-836395b78496a58a1e2b2ce21f9084a0.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Outer Wilds",
    "id": "Starfish",
-   "developer": "Annapurna Interactive"
+   "developer": "Annapurna Interactive",
+   "image": "https://cdn1.epicgames.com/item/starfish/OW_Epic_LandscapeStorefront_2560x1440-21cc536ba20ca2ddbff1a147046642fe_2560x1440-21cc536ba20ca2ddbff1a147046642fe?h=270&resize=1&w=480"
   },
   {
    "title": "Q.U.B.E. 10th Anniversary",
    "id": "440abc2d035f494a9bf172ed29f9fa2f",
-   "developer": "Toxic Games"
+   "developer": "Toxic Games",
+   "image": "https://cdn1.epicgames.com/spt-assets/da63fc81ff4b4226af6afda82c0aec3a/qube-10th-anniversary-offer-85ncl.png?h=270&resize=1&w=480"
   },
   {
    "title": "Q.U.B.E. 2",
    "id": "Auk",
-   "developer": "Ten Hut Games"
+   "developer": "Ten Hut Games",
+   "image": "https://cdn1.epicgames.com/4b5f1eb366dc45f0920d397c01b291ba/item/EGS_TOXICGAMES_QUBE2_G1-2560x1440-d2b89622979482c7b0a632306800b950.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Rebel Galaxy",
    "id": "Weaver",
-   "developer": "SNEG"
+   "developer": "SNEG",
+   "image": "https://cdn1.epicgames.com/item/weaver/ENG_DoubleDamageGames_RebelGalaxy_S1_2560x1440_2560x1440-e2aa8771e78cfeb48b8c915874159470?h=270&resize=1&w=480"
   },
   {
    "title": "Red Dead Redemption 2",
    "id": "Heather",
-   "developer": "Rockstar Games"
+   "developer": "Rockstar Games",
+   "image": "https://cdn1.epicgames.com/b30b6d1b4dfd4dcc93b5490be5e094e5/item/Diesel_productv2_heather_home_EGS_RockstarGames_RedDeadRedemption2_S1-2560x1440-d5fade458c9ba3c3726d578b18486f08e1a47999-2560x1440-c352abb41c52c8152d2688727ff647f1.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Return to Ash",
    "id": "e7d7c393d6f7499596e7d268a58b1970",
-   "developer": "Serenity Forge"
+   "developer": "Serenity Forge",
+   "image": "https://cdn1.epicgames.com/spt-assets/07c1bf7c44dc4c2e8567923f03c7d307/return-to-ash-18b39.png?h=270&resize=1&w=480"
   },
   {
    "title": "RiMS Racing",
    "id": "c67664a6227d4ceca58c70562073990d",
-   "developer": "Nacon"
+   "developer": "Nacon",
+   "image": "https://cdn1.epicgames.com/item/1ef3edbf3bf14defac0cdb42301e3d5e/EGS_RiMSRacing_RacewardStudio_S1_2560x1440-37da14c1de760fb517971a4f691ccaa3?h=270&resize=1&w=480"
   },
   {
    "title": "Rival Stars Horse Racing : Desktop Edition",
    "id": "d9da08fd23dd4078a520c9923780c153",
-   "developer": "Prodigy Design Ltd"
+   "developer": "Prodigy Design Ltd",
+   "image": "https://cdn1.epicgames.com/spt-assets/3355791f5b4740618adac242cf0dd46c/rival-stars-horse-racing-119um.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Rocket League®",
    "id": "Sugar",
-   "developer": "Psyonix LLC"
+   "developer": "Psyonix LLC",
+   "image": "https://cdn1.epicgames.com/item/9773aa1aa54f4f7b80e44bef04986cea/Rocket_Wide_2560x1440-b102a5ee64c64a9199673ad09fae6e42?h=270&resize=1&w=480"
   },
   {
    "title": "Rustler - Grand Theft Horse",
    "id": "6dfbeb5a6f2e42b5a6a5dcf7a8269e9c",
-   "developer": "Games Operators S.A."
+   "developer": "Games Operators S.A.",
+   "image": "https://cdn1.epicgames.com/spt-assets/a1324ca83bc543ae8747f8d5a99d777a/rustler--grand-theft-horse-122b0.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Scourgebringer",
    "id": "bf363d9625a5406f904d925f3e613327",
-   "developer": "Plug In Digital SAS"
+   "developer": "Plug In Digital SAS",
+   "image": "https://cdn1.epicgames.com/c03a3687567a4cf3910ea5ec7279664e/item/d536fc52-f970-4df6-85ee-8460d24f513e-2560x1440-53ed06898f05cb70a58dcff472a21a25.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Shadow Tactics: Blades of the Shogun",
    "id": "Fangtooth",
-   "developer": "Daedalic Entertainment"
+   "developer": "Daedalic Entertainment",
+   "image": "https://cdn1.epicgames.com/2f215955790d456b80c291bc2feaf7f7/item/EGS_MimimiGames_ShadowTacticsBladesoftheShogun_S3-1360x766-216c2e04b177c6b7252f1f535edef030.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Shogun Showdown",
    "id": "1fe58090c33849fab06bc2e441dabf2e",
-   "developer": "Goblinz Studio SAS"
+   "developer": "Goblinz Studio SAS",
+   "image": "https://cdn1.epicgames.com/spt-assets/450bcfdb9c00453394d7ccc2948ba5db/shogun-showdown-nprgz.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Sid Meier's Civilization VI",
    "id": "Kinglet",
-   "developer": "2K Games, Inc."
+   "developer": "2K Games, Inc.",
+   "image": "https://cdn1.epicgames.com/cd14dcaa4f3443f19f7169a980559c62/item/EGS_SidMeiersCivilizationVI_FiraxisGames_S5-1360x766-43ec615712394b3c4acbe77bce54975c.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "SKALD Against the Black Priory",
    "id": "1cac0c3169fa4c018f98e517cd0717bb",
-   "developer": "Raw Fury"
+   "developer": "Raw Fury",
+   "image": "https://cdn1.epicgames.com/spt-assets/b96afc9b56fd444384f48bac79bb2bf6/skald-against-the-black-priory-22ved.png?h=270&resize=1&w=480"
   },
   {
    "title": "Sniper Ghost Warrior Contracts",
    "id": "f8b6cc851ab34f5f9f07654426dc2429",
-   "developer": "CI Games "
+   "developer": "CI Games ",
+   "image": "https://cdn1.epicgames.com/spt-assets/4ad9b2d4a92141a09e3ca4df8bfbcfea/sniper-ghost-warrior-contracts-1h21n.png?h=270&resize=1&w=480"
   },
   {
    "title": "Songs of Silence",
    "id": "f3a0b50da2dd4226b8308c7e5fa1fbb6",
-   "developer": "Chimera Entertainment GmbH"
+   "developer": "Chimera Entertainment GmbH",
+   "image": "https://cdn1.epicgames.com/spt-assets/717e784a701e49bba02e27f7774e966a/songs-of-silence-acb7y.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Space Grunts: Chrono Shard",
    "id": "263aeee122aa4be7b5d4c67230900fff",
-   "developer": "THQ Nordic Mobile"
+   "developer": "THQ Nordic Mobile",
+   "image": "https://cdn1.epicgames.com/spt-assets/e2ddb86eec284ba5acb5cb2d96a48ef1/space-grunts-chrono-shard-19tr4.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Steelrising",
    "id": "800ab4cd7b3b4b1cae4b5bff81cdfa1a",
-   "developer": "Nacon"
+   "developer": "Nacon",
+   "image": "https://cdn1.epicgames.com/item/ae6aa949a2874b5fa15e8ab96bd77fee/EGS_Steelrising_Spiders_S1_2560x1440-c8026e89492ac70e42e2b3ea7116b2b6?h=270&resize=1&w=480"
   },
   {
    "title": "The Dungeon Of Naheulbeuk: The Amulet Of Chaos",
    "id": "02fac38ee2614c8ba276b1ea7c1acd7c",
-   "developer": "Plug In Digital SAS"
+   "developer": "Plug In Digital SAS",
+   "image": "https://cdn1.epicgames.com/456d95ca54814c8d98db2f52346ff5de/item/EGS_TheDungeonOfNaheulbeukTheAmuletOfChaos_ArtefactsStudio_S1-2560x1440-b9f0201b134b1a6a57fe46bc43fdf859.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "The Elder Scrolls Online",
    "id": "4d0ff75b922447649057c237c0bd1545",
-   "developer": "Bethesda Softworks LLC"
+   "developer": "Bethesda Softworks LLC",
+   "image": "https://cdn1.epicgames.com/item/27aa2ebdcda14b3bb8a669aab73ca55f/ESO_SeasonTwo_EGS_2560x1440-EN-01_2560x1440-fbf0ba9ea48745ae9d8944210ef2e987?h=270&resize=1&w=480"
   },
   {
    "title": "The Escapists",
    "id": "Peony",
-   "developer": "Team17 Digital Ltd"
+   "developer": "Team17 Digital Ltd",
+   "image": "https://cdn1.epicgames.com/61bc780f42f84fe29e6dfee957ab82de/item/TheEscapists_PDP%20Promo-2560x1440-03fae261503534b25a35bf41d4949e02.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "The Outer Worlds",
    "id": "Rosemallow",
-   "developer": "Microsoft"
+   "developer": "Microsoft",
+   "image": "https://cdn1.epicgames.com/rosemallow/item/Diesel_productv2_the-outer-worlds_home_ANC_Banner_TOW_NoLogo_1920x1080-%281%29-1920x1080-ebae8a5f2e33aeda17905df7c4d61ae65d6c72da-1920x1080-d71ee9b36e9b95adace99e39cc33e557.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "The Outer Worlds: Spacer's Choice Edition",
    "id": "cb3bf7ba89574a66ae3b795e039d4dbc",
-   "developer": "Microsoft"
+   "developer": "Microsoft",
+   "image": "https://cdn1.epicgames.com/item/dc61166eea95474e912953b163791d42/EGS_TheOuterWorldsSpacersChoiceEdition_ObsidianEntertainment_S1_2560x1440-dd9211a8277a2392a9dd5b108858ba33?h=270&resize=1&w=480"
   },
   {
    "title": "theHunter: Call of the Wild™",
    "id": "4f0c34d469bb47b2bcf5b377f47ccfe3",
-   "developer": "Avalanche Studios Group AB"
+   "developer": "Avalanche Studios Group AB",
+   "image": "https://cdn1.epicgames.com/item/c7f9346e3db148fca6dd63e9dd8451bd/EGS_theHunterCalloftheWild_ExpansiveWorlds_S1_2560x1440_2560x1440-69120885e0b3acfb87f34ac0bad68ec6?h=270&resize=1&w=480"
   },
   {
    "title": "Tiny Tina's Assault on Dragon Keep: A Wonderlands One-shot Adventure",
    "id": "9e296d276ad447108f12c654c3341d59",
-   "developer": "2K Games, Inc."
+   "developer": "2K Games, Inc.",
+   "image": "https://cdn1.epicgames.com/item/d98b6c292e224a59b359372f4f5152df/EGS_TinyTinasAssaultonDragonKeepAWonderlandsOneshotAdventure_GearboxSoftwareStrayKiteStudios_S3Wide_2560x1440-e156d1f0c97520ac901d73c7582bbd9d?h=270&resize=1&w=480"
   },
   {
    "title": "Tiny Tina's Wonderlands",
    "id": "eb6ddfb245f647e2bb6902f52f38a535",
-   "developer": "2K Games, Inc."
+   "developer": "2K Games, Inc.",
+   "image": "https://cdn1.epicgames.com/item/c37115918ccc4969a57b6b1bdc28af4a/TTW_wide_2560x1440-698fba08f2bcd7cb08fc6cf1829b02d1?h=270&resize=1&w=480"
   },
   {
    "title": "Total War: Rome II - Emperor Edition",
    "id": "634a920ea3bb4aad8746b59c50603890",
-   "developer": "SEGA of Europe"
+   "developer": "SEGA of Europe",
+   "image": "https://cdn1.epicgames.com/spt-assets/971e1189b46449e7976fada8c1a7aa0f/total-war-rome-ii-keber.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Total War: THREE KINGDOMS",
    "id": "769f2fee68e9477180da900ccccbbcf0",
-   "developer": "SEGA of Europe"
+   "developer": "SEGA of Europe",
+   "image": "https://cdn1.epicgames.com/spt-assets/3dafb7abbfc34385ba581cad1424865a/not-in-use--total-war-three-kingdoms-khg8t.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Touch Type Tale",
    "id": "fe118ed0362040c994b510da064876ca",
-   "developer": "Mythwright"
+   "developer": "Mythwright",
+   "image": "https://cdn1.epicgames.com/item/7029f6353d7f468eb6940bbe6041474e/EGS_TouchTypeTale_PumpernickelStudio_S1_2560x1440-d187f8eb5013492f728313fb92978f16?h=270&resize=1&w=480"
   },
   {
    "title": "Train Sim World 2",
    "id": "dd75b5c168d546cc869582c0389f0a1d",
-   "developer": "Dovetail Games"
+   "developer": "Dovetail Games",
+   "image": "https://cdn1.epicgames.com/salesEvent/salesEvent/home_2560x1440-0bc89f2c71c91b711b22eb7d634834bd?h=270&resize=1&w=480"
   },
   {
    "title": "Trine 2: Complete Story",
    "id": "bb9fca58dae446b8af86c668dd7a7234",
-   "developer": "Frozenbyte"
+   "developer": "Frozenbyte",
+   "image": "https://cdn1.epicgames.com/spt-assets/50b4d2b4f87d440997ebfbb3a1005dca/trine-2-complete-story-ikzws.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Trine 3: The Artifacts of Power",
    "id": "81fbec1949fb4458bbe5c2711d0d64f6",
-   "developer": "Frozenbyte"
+   "developer": "Frozenbyte",
+   "image": "https://cdn1.epicgames.com/spt-assets/10a55229d552428ab7778f4862bf5dc0/trine-3-the-artifacts-of-power-1pb8u.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Trine 4: Definitive Edition",
    "id": "80510c874abe43149f3db85756351da6",
-   "developer": "Frozenbyte"
+   "developer": "Frozenbyte",
+   "image": "https://cdn1.epicgames.com/spt-assets/b61d8ed9ff724cfe969ee79b41e604a5/trine-4-definitive-edition-14xl2.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Trine Enchanted Edition",
    "id": "91eac4ac00304bcc9d7d4a55a95894b3",
-   "developer": "Frozenbyte"
+   "developer": "Frozenbyte",
+   "image": "https://cdn1.epicgames.com/spt-assets/ca4cbfe5a72249b48656cdde1804f434/trine-enchanted-edition-tsp1m.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Verdun",
    "id": "38c0129b680e4843b4807b98bad67027",
-   "developer": "BlackMill Games B.V."
+   "developer": "BlackMill Games B.V.",
+   "image": "https://cdn1.epicgames.com/item/e4a2a414d46849f49a35c0f80df2903a/EGS_Verdun_BlackmillGamesM2H_S1_2560x1440-1519c10619790e4094cbbc62faa50fcb?h=270&resize=1&w=480"
   },
   {
    "title": "Viewfinder",
    "id": "17979201bdd845f0ab53d1d62d841dbf",
-   "developer": "Thunderful Publishing"
+   "developer": "Thunderful Publishing",
+   "image": "https://cdn1.epicgames.com/spt-assets/215584b8c0224111b8339bfb5589ba0f/viewfinder-1dylf.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Weird West: Definitive Edition",
    "id": "5ab7c9b39f81481c88dce1e4f106a594",
-   "developer": "Devolver Digital, Inc."
+   "developer": "Devolver Digital, Inc.",
+   "image": "https://cdn1.epicgames.com/spt-assets/127cdd507a3a404883d77705ee2700e4/weird-west-1bpno.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Werewolf: The Apocalypse - Earthblood",
    "id": "Teal",
-   "developer": "Nacon"
+   "developer": "Nacon",
+   "image": "https://cdn1.epicgames.com/9c86694776c04893bec691f13f4b60fc/item/EGS_WerewolfTheApocalypseEarthblood_CyanideStudio_S1-2560x1440-7d13adc7f997d2149605debcb457d7e6-2560x1440-7d13adc7f997d2149605debcb457d7e6.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Wild Card Football",
    "id": "6fd5e6a8632c499fa2657cf650c96b14",
-   "developer": "Saber Interactive"
+   "developer": "Saber Interactive",
+   "image": "https://cdn1.epicgames.com/item/3072dbe471f84dac8b2e9ba8af253ee2/EGS_WildCardFootball_SaberInteractive_S1_2560x1440-8a226b013b7731e5b5d905d82747a1f8?h=270&resize=1&w=480"
   },
   {
    "title": "Wildgate",
    "id": "0ad0ed7b851c46378f9fcac07b72b548",
-   "developer": "Dreamhaven, Inc."
+   "developer": "Dreamhaven, Inc.",
+   "image": "https://cdn1.epicgames.com/spt-assets/66d8f537f1aa4636985ff868d51651eb/wildgate-1wpsu.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "WRC Generations",
    "id": "96aa9b93b32241209c2786bd7e0ea3a6",
-   "developer": "Nacon"
+   "developer": "Nacon",
+   "image": "https://cdn1.epicgames.com/spt-assets/3786d94efeb348db95de16abba81e9e3/wrc-generations--the-fia-wrc-official-game-offer-x1fn7.jpg?h=270&resize=1&w=480"
   }
  ]
 }

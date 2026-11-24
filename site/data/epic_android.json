@@ -1,118 +1,140 @@
 {
  "platform": "epic",
  "device": "android",
- "extract_date": "2026-11-23",
+ "extract_date": "2026-11-24",
  "count": 22,
  "games": [
   {
    "title": "Botanicula",
    "id": "352e01e9352b4ea088c505080dc15eb8",
-   "developer": "Amanita Design s.r.o."
+   "developer": "Amanita Design s.r.o.",
+   "image": "https://cdn1.epicgames.com/spt-assets/ffe4df6e32664927a3423e4bde3b4051/botanicula-uw2gm.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Bouncemasters",
    "id": "7cf9142001684affb7eeea509247edc7",
-   "developer": "JOYBITS LIMITED"
+   "developer": "JOYBITS LIMITED",
+   "image": "https://cdn1.epicgames.com/spt-assets/c0ee39442aff4a9198e0b1df04087e8d/bouncemasters-vtov5.png?h=270&resize=1&w=480"
   },
   {
    "title": "Boxes: Lost Fragments",
    "id": "384bda37c6d64a789a330b537abdbdaa",
-   "developer": "Snapbreak Games AB"
+   "developer": "Snapbreak Games AB",
+   "image": "https://cdn1.epicgames.com/spt-assets/7f8e5cd71ae04eaeb7d782a5946db16f/boxes-lost-fragments-1nh2y.png?h=270&resize=1&w=480"
   },
   {
    "title": "CHUCHEL",
    "id": "7e874dd2a7a941eabdf72755b42405db",
-   "developer": "Amanita Design s.r.o."
+   "developer": "Amanita Design s.r.o.",
+   "image": "https://cdn1.epicgames.com/spt-assets/6109686c842a4bd9b9ef8959ec4d97c6/chuchel-1uzxx.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Construction Simulator 3",
    "id": "7f96cc0f1f754046891bf0cb1e68b8db",
-   "developer": "Store Rider"
+   "developer": "Store Rider",
+   "image": "https://cdn1.epicgames.com/spt-assets/0f2312fd1acc40af8ede297e257b1cd5/construction-simulator-3-su2ty.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Dead Cells",
    "id": "4e980122452a4b48a99a83126e226053",
-   "developer": "Playdigious"
+   "developer": "Playdigious",
+   "image": "https://cdn1.epicgames.com/spt-assets/697909f81fb44bcbade50cc93d2e78d2/dead-cells-1b2lo.png?h=270&resize=1&w=480"
   },
   {
    "title": "Dumb Ways to Die",
    "id": "5d2fcf73e12b42dca18ba8c1f556d5e8",
-   "developer": "PlaySide Studios LTD"
+   "developer": "PlaySide Studios LTD",
+   "image": "https://cdn1.epicgames.com/spt-assets/63dd97c2c58d47e195b51b2663337c9a/dumb-ways-to-die-ne38q.png?h=270&resize=1&w=480"
   },
   {
    "title": "Guild of Dungeoneering Ultimate Edition",
    "id": "18e223de9de54b8a8745d8e5b99d42b8",
-   "developer": "Gambrinous"
+   "developer": "Gambrinous",
+   "image": "https://cdn1.epicgames.com/spt-assets/d048815ffed0480c8ac257b8b7807e2b/guild-of-dungeoneering-ultimate-7egff.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Knightica",
    "id": "2aa3cfc522d846de8061d703e7eb02cf",
-   "developer": "Goblinz Studio SAS"
+   "developer": "Goblinz Studio SAS",
+   "image": "https://cdn1.epicgames.com/spt-assets/357100ca5613420e98208c5f14585e9d/knightica-g7e11.png?h=270&resize=1&w=480"
   },
   {
    "title": "LIMBO",
    "id": "8c7f64f350914a86ad38f7dccabc52c6",
-   "developer": "Playdead"
+   "developer": "Playdead",
+   "image": "https://cdn1.epicgames.com/spt-assets/8dd4bfecdb45403fbf7f838b7c52450c/limbo-mobile-y6uag.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Loop Hero",
    "id": "48b62bbee8744af8ba185d4da764f448",
-   "developer": "Playdigious"
+   "developer": "Playdigious",
+   "image": "https://cdn1.epicgames.com/spt-assets/351c399d9b45407187ce31e635063e8b/loop-hero-10g6n.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Machinarium",
    "id": "dc073fcd5c0a4b3e85b51ba598399be4",
-   "developer": "Amanita Design s.r.o."
+   "developer": "Amanita Design s.r.o.",
+   "image": "https://cdn1.epicgames.com/spt-assets/907d9edf585e4c23b971164cd1c452e2/machinarium-18713.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Monument Valley",
    "id": "6a5a9639d86d47c9a852f70652a3216e",
-   "developer": "ustwo games"
+   "developer": "ustwo games",
+   "image": "https://cdn1.epicgames.com/spt-assets/e56a7411805046d3b5b7253a6e4e0faa/monument-valley-wr3lx.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Potion Permit",
    "id": "48b7421055b24814b8a50f2d9d298b1d",
-   "developer": "Playdigious"
+   "developer": "Playdigious",
+   "image": "https://cdn1.epicgames.com/spt-assets/df7d51745d2f4800938bf4f2f38cf63c/potion-permit-qt6k7.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Princess Farmer",
    "id": "58718acac38443ad8f9e305e6afd108f",
-   "developer": "White Thorn Digital"
+   "developer": "White Thorn Digital",
+   "image": "https://cdn1.epicgames.com/spt-assets/d08c25c96a954b1b8cb0c22c3fec015f/princess-farmer-1y4kh.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "ScourgeBringer",
    "id": "ccf5733f0614447184c72a0ba7ab2b8a",
-   "developer": "Plug In Digital SAS"
+   "developer": "Plug In Digital SAS",
+   "image": "https://cdn1.epicgames.com/spt-assets/9adab56f7e8a48d6b5e137983460dbff/scourgebringer-1optx.png?h=270&resize=1&w=480"
   },
   {
    "title": "Shapez",
    "id": "cbe0d1e6aefe40dabba7a9133d05457e",
-   "developer": "Playdigious"
+   "developer": "Playdigious",
+   "image": "https://cdn1.epicgames.com/spt-assets/14158b2525434cb2bc053748edefb55c/shapez-1vlac.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Shotgun King: The Final Checkmate",
    "id": "e57fb902cebf4b0d87164940d400d3a5",
-   "developer": "Plug In Digital SAS"
+   "developer": "Plug In Digital SAS",
+   "image": "https://cdn1.epicgames.com/spt-assets/dffb5863c83548419a4e7f902b51d40a/shotgun-king-iikqm.png?h=270&resize=1&w=480"
   },
   {
    "title": "Skul: The Hero Slayer",
    "id": "8c9633e69176480f845b92d8a00b905f",
-   "developer": "Playdigious"
+   "developer": "Playdigious",
+   "image": "https://cdn1.epicgames.com/spt-assets/cf279cf29eba4e14b93c898ef502239c/skul-the-hero-slayer-17vci.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "The Darkside Detective A Fumble in the Dark",
    "id": "f9447ea126004893ab504cb9444516b4",
-   "developer": "Akupara Games"
+   "developer": "Akupara Games",
+   "image": "https://cdn1.epicgames.com/spt-assets/0638bcc62d9f4ba2a53eb9093c54be31/the-darkside-detective-a-fumble-in-the-dark-1r1tu.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "The Ouroboros King",
    "id": "cacc3d1ec4eb4258a85e72915cab311b",
-   "developer": "Plug In Digital SAS"
+   "developer": "Plug In Digital SAS",
+   "image": "https://cdn1.epicgames.com/spt-assets/33630d7105014582a478094e89953f49/the-ouroboros-king-5ymqh.jpg?h=270&resize=1&w=480"
   },
   {
    "title": "Wonder Boy: The Dragon's Trap",
    "id": "714b006b310a4564b4dec013bafafeab",
-   "developer": "Store Rider"
+   "developer": "Store Rider",
+   "image": "https://cdn1.epicgames.com/spt-assets/079026cc222549ceaa8b5c16770507b9/wonder-boy-the-dragons-trap-oey1z.jpg?h=270&resize=1&w=480"
   }
  ]
 }

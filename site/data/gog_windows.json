@@ -1,157 +1,183 @@
 {
  "platform": "gog",
  "device": "windows",
- "extract_date": "2026-11-23",
+ "extract_date": "2026-11-24",
  "count": 26,
  "games": [
   {
    "title": "Baldur's Gate II: Enhanced Edition",
    "id": "1207666373",
    "category": "Role-playing",
-   "url": "https://www.gog.com/en/game/baldurs_gate_2_enhanced_edition"
+   "url": "https://www.gog.com/en/game/baldurs_gate_2_enhanced_edition",
+   "image": "https://images-2.gog-statics.com/865e412024677b4594a91ea7cc3da75077ce8114adc26d5b92cb82c7f9b4509f_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Baldur's Gate: Enhanced Edition",
    "id": "1207666353",
    "category": "Role-playing",
-   "url": "https://www.gog.com/en/game/baldurs_gate_enhanced_edition"
+   "url": "https://www.gog.com/en/game/baldurs_gate_enhanced_edition",
+   "image": "https://images-2.gog-statics.com/90ba7463dae94110fd495957a6311648a6e1999bab1a0fcc2d5176b3f46141e8_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "BioShock™",
    "id": "2022341186",
    "category": "Shooter",
-   "url": "https://www.gog.com/en/game/bioshock_remastered"
+   "url": "https://www.gog.com/en/game/bioshock_remastered",
+   "image": "https://images-4.gog-statics.com/68f8517c8391d0af43e3d219f387b04f50b1281d300696aedd08a160627d8166_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "BioShock™ Remastered",
    "id": "1439656515",
    "category": "Shooter",
-   "url": "https://www.gog.com/en/game/bioshock_remastered"
+   "url": "https://www.gog.com/en/game/bioshock_remastered",
+   "image": "https://images-1.gog-statics.com/a8e79b7c19e3a2c6f8502f7011ffbbdbe8dd740137b4a1cd3a9944fcd1bbf2bf_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Bō: Path of the Teal Lotus",
    "id": "1882554410",
    "category": "Action",
-   "url": "https://www.gog.com/en/game/bo_path_of_the_teal_lotus"
+   "url": "https://www.gog.com/en/game/bo_path_of_the_teal_lotus",
+   "image": "https://images-2.gog-statics.com/67eb4ad80e07a0f3279be128523d2a6c0d5abeeaa32f1a67516303ad04b916f6_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Call of Juarez",
    "id": "1909524379",
    "category": "Shooter",
-   "url": "https://www.gog.com/en/game/call_of_juarez"
+   "url": "https://www.gog.com/en/game/call_of_juarez",
+   "image": "https://images-1.gog-statics.com/78a1dceebceefb8e407755c05bc3c2f1201bff3d5934b73128c6b769dc7e5d32_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Call of Juarez: Bound in Blood",
    "id": "1770556474",
    "category": "Shooter",
-   "url": "https://www.gog.com/en/game/call_of_juarez_bound_in_blood"
+   "url": "https://www.gog.com/en/game/call_of_juarez_bound_in_blood",
+   "image": "https://images-2.gog-statics.com/0b626860c7459e93cb5ed3a5b13598a5ccb08edfc14a00c4f44fc821cea35e59_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Captain Blood",
    "id": "1293807013",
    "category": "Action",
-   "url": "https://www.gog.com/en/game/captain_blood"
+   "url": "https://www.gog.com/en/game/captain_blood",
+   "image": "https://images-3.gog-statics.com/bdcc8d0f4115a791a28d26347814f50b8540802ea0857a8fb4bc85aa7ee23460_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "DOOM (2016)",
    "id": "1390579243",
    "category": "Shooter",
-   "url": "https://www.gog.com/en/game/doom_2016"
+   "url": "https://www.gog.com/en/game/doom_2016",
+   "image": "https://images-3.gog-statics.com/82a7cd303997644e10450fad1be3a3666f5cb0cfbc1fa44b38b429e607e64426_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "DOOM + DOOM II",
    "id": "1413291984",
    "category": "Shooter",
-   "url": "https://www.gog.com/en/game/doom_doom_ii"
+   "url": "https://www.gog.com/en/game/doom_doom_ii",
+   "image": "https://images-2.gog-statics.com/eaad5d1fce93e36d33b9983fba7edc623e23793e138667aafff6b7a305717c84_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "DOOM I Enhanced",
-   "id": "2015545325"
+   "id": "2015545325",
+   "image": "https://images-4.gog-statics.com/2cbe0fc4f6726cbbd35bc3578bcefc6d33fe7138ca5bfc35c795087d738dfbd0_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "DOOM II + Master Levels",
    "id": "1435848814",
-   "category": "Shooter"
+   "category": "Shooter",
+   "image": "https://images-3.gog-statics.com/c1f0858b5d431d7ff13ea7e577d52959e8f832ea8066d66035f86cb5bd8c80ff_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "DOOM II Enhanced",
-   "id": "1426071866"
+   "id": "1426071866",
+   "image": "https://images-3.gog-statics.com/b8a290c8e8e0315715851722306c3494e67c58c1b928d07dcc233959d9c759ee_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Fallout 3: Game of the Year Edition",
    "id": "1454315831",
    "category": "Role-playing",
-   "url": "https://www.gog.com/en/game/fallout_3_game_of_the_year_edition"
+   "url": "https://www.gog.com/en/game/fallout_3_game_of_the_year_edition",
+   "image": "https://images-1.gog-statics.com/290240ae4e689bd7d016344d2d98d2ceac0c49d966bfb6c0736e6c6f76b456fd_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "FATE: The Traitor Soul",
    "id": "1595490147",
    "category": "Role-playing",
-   "url": "https://www.gog.com/en/game/fate_the_traitor_soul"
+   "url": "https://www.gog.com/en/game/fate_the_traitor_soul",
+   "image": "https://images-1.gog-statics.com/5417532f2dfc0a83a226e456e354af20c9a02d4a9dd252502ebdd75c54018482_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Final Doom",
    "id": "1435848742",
-   "category": "Shooter"
+   "category": "Shooter",
+   "image": "https://images-4.gog-statics.com/366a67d13a260dbafbc0b07d7080b148825bde15814547ae38a631ccace111c0_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "LEGO® Star Wars™ III - The Clone Wars™",
    "id": "2119193622",
    "category": "Action",
-   "url": "https://www.gog.com/en/game/lego_star_wars_the_clone_wars"
+   "url": "https://www.gog.com/en/game/lego_star_wars_the_clone_wars",
+   "image": "https://images-3.gog-statics.com/835a0947eda2ed8f1d6b6d6f656c2cbe21da54857376fcdb279989bd5b89fc9c_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Mahokenshi",
    "id": "1409800471",
    "category": "Strategy",
-   "url": "https://www.gog.com/en/game/mahokenshi"
+   "url": "https://www.gog.com/en/game/mahokenshi",
+   "image": "https://images-3.gog-statics.com/c71c070f59b72dc895b57950bc6410e0794ab57edf2052e03bf34ab536a4b959_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Meganoid",
    "id": "1438861093",
    "category": "Action",
-   "url": "https://www.gog.com/en/game/meganoid"
+   "url": "https://www.gog.com/en/game/meganoid",
+   "image": "https://images-3.gog-statics.com/bb9a6eb70959be4aa69aecb6bb2dc10f153756c994564dd95fdccb15252d6510_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Middle-earth™: Shadow of Mordor™ Game of the Year Edition",
    "id": "1213504814",
    "category": "Action",
-   "url": "https://www.gog.com/en/game/middleearth_shadow_of_mordor"
+   "url": "https://www.gog.com/en/game/middleearth_shadow_of_mordor",
+   "image": "https://images-2.gog-statics.com/455ff8097ca01fe893703d38b20f46bc9a539765256f9755ea9e592f48938763_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Monster Train",
    "id": "1304291300",
    "category": "Strategy",
-   "url": "https://www.gog.com/en/game/monster_train"
+   "url": "https://www.gog.com/en/game/monster_train",
+   "image": "https://images-2.gog-statics.com/6eed0937ce6a8247d76538d307d4314075245eec9e6dcbf799de74688082c50d_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Phantasie Memorial Set",
    "id": "1919929332",
    "category": "Role-playing",
-   "url": "https://www.gog.com/en/game/phantasie_memorial_set"
+   "url": "https://www.gog.com/en/game/phantasie_memorial_set",
+   "image": "https://images-4.gog-statics.com/17f517fcd967b2c4884528b856ca7a8c40028ca9e9054c2825a7110c3e68b25c_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "STAR WARS™ Battlefront™ II (Classic, 2005)",
    "id": "1421404701",
    "category": "Shooter",
-   "url": "https://www.gog.com/en/game/star_wars_battlefront_ii"
+   "url": "https://www.gog.com/en/game/star_wars_battlefront_ii",
+   "image": "https://images-1.gog-statics.com/458d6b963755ce3b0afa93f9976e2c05360f569826b00f0c91442f8a892f19a9_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "The Ultimate Doom",
    "id": "1435827232",
-   "category": "Shooter"
+   "category": "Shooter",
+   "image": "https://images-2.gog-statics.com/5175cf9ebd744a41f9ba0a2cca30ece6ba20281cafe72cce9fcf09e937f6867f_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "THIEF: Definitive Edition",
    "id": "1446830366",
    "category": "Action",
-   "url": "https://www.gog.com/en/game/thief_definitive_edition"
+   "url": "https://www.gog.com/en/game/thief_definitive_edition",
+   "image": "https://images-3.gog-statics.com/91d81e2647863f0ded3a83c1492dedcd8e37f06645f20e540c88dd0cab8f699c_product_card_v2_mobile_slider_639.jpg"
   },
   {
    "title": "Tomb Raider GOTY",
    "id": "1724969043",
    "category": "Action",
-   "url": "https://www.gog.com/en/game/tomb_raider_goty"
+   "url": "https://www.gog.com/en/game/tomb_raider_goty",
+   "image": "https://images-1.gog-statics.com/74ef44a280dd89f7764b2e31a3356cb7fa90f89a0227038191e2714ccfd3cbdb_product_card_v2_mobile_slider_639.jpg"
   }
  ]
 }
