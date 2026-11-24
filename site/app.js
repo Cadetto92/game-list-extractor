@@ -51,6 +51,8 @@ function visibleGames() {
           : PLATFORM_NAMES[list.platform]
       );
       if (!entry.game.url && game.url) entry.game = game;
+      // The same title can appear on several platforms: keep the first picture found.
+      if (!entry.image && safeUrl(game.image)) entry.image = game.image;
     }
   }
   const q = state.query.trim().toLowerCase();
@@ -116,17 +118,30 @@ function render() {
   $("empty").hidden = games.length !== 0;
   $("platform-head").hidden = state.tab !== "all" && state.tab !== "epic";
 
-  const rows = games.map(({ game, labels }) => {
+  const rows = games.map(({ game, labels, image }) => {
     const tr = el("tr");
     const title = el("td");
+    const cell = el("div", undefined, "game");
+    // The box keeps its size without a picture, so rows stay aligned.
+    const thumb = el("span", undefined, "thumb");
+    const src = safeUrl(image);
+    if (src) {
+      const img = el("img");
+      img.src = src; img.alt = ""; img.loading = "lazy"; img.decoding = "async";
+      img.referrerPolicy = "no-referrer"; // the store CDNs do not need to know this site's address
+      img.addEventListener("error", () => { img.hidden = true; });
+      thumb.append(img);
+    }
+    cell.append(thumb);
     const href = safeUrl(game.url);
     if (href) {
       const a = el("a", game.title);
       a.href = href; a.target = "_blank"; a.rel = "noopener noreferrer";
-      title.append(a);
+      cell.append(a);
     } else {
-      title.textContent = game.title;
+      cell.append(el("span", game.title));
     }
+    title.append(cell);
     tr.append(title);
     const chips = el("td");
     [...labels].sort().forEach((label) =>
