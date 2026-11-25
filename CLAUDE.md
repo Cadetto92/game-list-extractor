@@ -8,14 +8,14 @@ This repository is **public**. Only game lists and the optional friend names may
 
 - Never commit or print: `.env`, the Steam API key, the SteamID64, login names, emails, passwords, playtime, anything from `results/`.
 - Exporters write only whitelisted fields to `site/data/` (`GAME_FIELDS` in `src/export_utils.py`). Do not add fields such as playtime.
-- `site/profiles.json` is the only place for account names (friend names, entered by hand by the owner). Do not fill it from `.env` or the exporters, and do not copy its values into other files.
+- `site/profiles.json` is the only place for account names (friend names provided by the owner and edited by hand). Do not fill it from `.env` or the exporters, and do not copy its values into other files.
 - `src/publish_games.py` checks all of this before every publish. Keep those checks working when you change it, and never weaken them to make a publish pass.
-- Commits must use the GitHub no-reply address (see the README). Do not put a personal email in commits, docs or code.
+- Commits must use the GitHub no-reply address (see the README). Do not put a personal email in commits, docs or code. `publish-games` enforces this, and also publishes only `site/data/*.json` and refuses empty lists, big removals without a typed `publish`, and unrelated waiting commits. Keep those rules strict.
 - When looking at `.env`, test values without printing them (for example, print only booleans).
 
 ## Workflow rules
 
-- Do not commit or push unless the user asks. The user usually publishes with `publish-games` (or the prompt at the end of an exporter), which commits and pushes everything under `site/` (game lists, page code, `profiles.json`) after the privacy checks.
+- Do not commit or push unless the user asks. The user usually publishes with `publish-games` (or the prompt at the end of an exporter), which commits and pushes only the game lists in `site/data/` after the privacy checks. It refuses to publish while website files (page code, `profiles.json`) are modified, so those are committed by hand when the user asks.
 - Test publishing and git behaviour in a throwaway repository in the scratchpad, never in this repo.
 - The `refs/agents/...` refs in `.git` are local checkpoints from the agent host. Leave them alone; they are not pushed.
 
@@ -28,6 +28,11 @@ This repository is **public**. Only game lists and the optional friend names may
 - Keep tabs and tags visually different: tabs and switches are outlined rounded buttons; platform tags are flat square badges with a dot on each side. Epic Windows shows as "Epic" and only Android is named ("Epic (Android)"). An empty search shows "No game matches your search." and the footer link stays small and grey so it cannot be mistaken for a game.
 - Windows 11, PowerShell, VS Code. Application Control may block pip's `.exe` launchers, so run scripts as `python src\<name>.py` and start Legendary through `python -m legendary.cli` (already done in `epic_games.py`).
 - When reading git output on Windows, force UTF-8 (see `git()` in `publish_games.py`): titles contain symbols such as ® and ™.
+
+## Known limits (accepted by the owner, do not "fix" unasked)
+
+- The exporters overwrite the CSV in `results/` (and the local `site/data/` file) even when the export is empty or partial. Only publishing is guarded, because the CSV is a throwaway copy and the published lists live in git history.
+- The site merges games by title (trimmed, case-insensitive), so two different games with the same title show as one row, and the "All" count can differ from the sum of the platform counts.
 
 ## Checks before finishing a change
 

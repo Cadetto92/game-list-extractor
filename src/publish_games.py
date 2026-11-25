@@ -22,6 +22,11 @@ SITE_FILES = {"site/index.html", "site/style.css", "site/app.js", "site/profiles
 PLATFORM_NAMES = {"epic": "Epic", "gog": "GOG", "steam": "Steam"}
 # Maximum number of titles printed (and committed) per category, to keep messages readable.
 MAX_LISTED = 40
+# A list that loses more than this share of its games needs a second, typed confirmation.
+MAX_REMOVED_PERCENT = 10
+DATA_PREFIX = "site/data/"
+# Every commit must use a GitHub no-reply address: the repository is public.
+NOREPLY_SUFFIX = "@users.noreply.github.com"
 
 
 def git(*args, check=True):
@@ -56,10 +61,24 @@ def validate():
         path = os.path.join(SITE_DATA_DIR, name)
         with open(path, encoding="utf-8") as file:
             text = file.read()
-        data = json.loads(text)
-        if set(data) != set(LIST_FIELDS):
-            sys.exit(f"{path}: unexpected fields {sorted(set(data) ^ set(LIST_FIELDS))}")
+        try:
+            data = json.loads(text)
+        except ValueError as error:
+            sys.exit(f"{path}: not valid JSON ({error}). Run the exporter again.")
+        if not isinstance(data, dict) or set(data) != set(LIST_FIELDS):
+            sys.exit(f"{path}: unexpected fields. Expected exactly {sorted(LIST_FIELDS)}.")
+        if not isinstance(data["games"], list) or data["count"] != len(data["games"]):
+            sys.exit(f"{path}: the game count does not match the list. Run the exporter again.")
+        if not data["games"]:
+            sys.exit(
+                f"{path}: the list is empty (0 games). This looks like a failed export, so nothing "
+                "was published. Run the exporter again."
+            )
         for game in data["games"]:
+            if not isinstance(game, dict) or not isinstance(game.get("title"), str) or not game["title"].strip():
+                sys.exit(f"{path}: a game has no title. Not publishing.")
+            if not all(isinstance(value, str) for value in game.values()):
+                sys.exit(f"{path}: '{game['title']}' has a value that is not text. Not publishing.")
             extra = set(game) - set(GAME_FIELDS)
             if extra:
                 sys.exit(f"{path}: unexpected game fields {sorted(extra)}")
@@ -82,14 +101,13 @@ def check_image(path, game):
 def check_site_files(secrets):
     """Exit if site/ holds a file that is not part of the website, or any file with a .env value.
 
-    Everything under site/ is committed, so a stray file (a note, a copied .env) must never go
-    out unnoticed.
+    A stray file (a note, a copied .env) must never end up in a commit unnoticed.
     """
     listed = git("ls-files", "-z", "--cached", "--others", "--exclude-standard", "--", "site")
     paths = sorted({p for p in listed.split("\0") if p and os.path.isfile(p)})
     unexpected = [
         p for p in paths
-        if p not in SITE_FILES and not (p.startswith("site/data/") and p.endswith(".json") and p.count("/") == 2)
+        if p not in SITE_FILES and not is_list_file(p)
     ]
     if unexpected:
         sys.exit(
@@ -229,9 +247,13 @@ def compare(name):
     if not (added or removed or updated):
         return None
     return {
+        "name": name,
+        "old_date": old["extract_date"] if old else None,
+        "new_date": new["extract_date"],
         "label": list_label(new),
         "is_new_list": old is None,
         "total": new["count"],
+        "old_total": len(old_games),
         "added": added,
         "removed": removed,
         "updated": updated,
@@ -248,31 +270,154 @@ def format_titles(heading, symbol, items):
     return lines
 
 
-def format_changes(changes):
+def date_text(old_date, new_date):
+    return f"date {old_date} -> {new_date}"
+
+
+def format_changes(changes, refreshed=()):
+    """Lines describing the game changes (with any date change) and the lists with only a new date."""
     lines = []
     for change in changes:
         header = f"{change['label']}: "
         header += "new list, " if change["is_new_list"] else ""
         header += f"{change['total']} games"
+        if change["old_date"] and change["old_date"] != change["new_date"]:
+            header += f" ({date_text(change['old_date'], change['new_date'])})"
         lines += ["", header]
         lines += format_titles("Added", "+", change["added"])
         lines += format_titles("Removed", "-", change["removed"])
         lines += format_titles("Updated", "~", change["updated"])
+    for _, label, old_date, new_date in refreshed:
+        lines += ["", f"{label}: no game changed, {date_text(old_date, new_date)}"]
     return lines[1:]
 
 
-def commit_message(changes, files):
-    subjects = []
-    body = []
+def commit_message(changes, refreshed):
     if changes:
-        subjects.append("Update game lists: " + ", ".join(
+        subject = "Update game lists: " + ", ".join(
             f"{c['label']} +{len(c['added'])} -{len(c['removed'])} ~{len(c['updated'])}" for c in changes
-        ))
-        body += format_changes(changes)
-    if files:
-        subjects.append("Update website files")
-        body += ([""] if body else []) + ["Website files:"] + [f"  ~ {path}" for path in files]
-    return "; ".join(subjects) + "\n\n" + "\n".join(body)
+        )
+        if refreshed:
+            subject += "; new date: " + ", ".join(label for _, label, *_ in refreshed)
+    else:
+        subject = "Refresh list dates: " + ", ".join(label for _, label, *_ in refreshed)
+    return subject + "\n\n" + "\n".join(format_changes(changes, refreshed))
+
+
+def refreshed_lists(changes, names):
+    """Return (file name, label, old date, new date) for lists with no game change but a newer date."""
+    changed = {change["name"] for change in changes}
+    refreshed = []
+    for name in names:
+        if name in changed:
+            continue
+        old = read_published(name)
+        new = read_current(name)
+        if old and old["extract_date"] != new["extract_date"]:
+            refreshed.append((name, list_label(new), old["extract_date"], new["extract_date"]))
+    return refreshed
+
+
+def refresh_dates(refreshed):
+    """No game changed, but the lists were refreshed: offer to publish only the new dates.
+
+    Returns True when the dates were committed and pushed.
+    """
+    print("\nNo game changed in any list since the last published version.\n")
+    print("\n".join(format_changes([], refreshed)))
+    try:
+        answer = input('\nUpdate only the "last updated" date on the website? [y/N] ')
+    except EOFError:
+        answer = "n"
+    if answer.strip().lower() not in ("y", "yes"):
+        print("Not published. The new dates stay on this computer only.")
+        return False
+    paths = [f"{DATA_PREFIX}{name}" for name, *_ in refreshed]
+    git("add", "--", *paths)
+    git("commit", "-m", commit_message([], refreshed), "--only", "--", *paths)
+    print("Committed on this computer.")
+    push()
+    return True
+
+
+def large_removals(changes):
+    """Return the lists that lose more than MAX_REMOVED_PERCENT of their games."""
+    return [
+        c for c in changes
+        if not c["is_new_list"] and len(c["removed"]) * 100 > c["old_total"] * MAX_REMOVED_PERCENT
+    ]
+
+
+def confirm_large_removals(large):
+    """Warn about lists that lose many games and require typing the word 'publish'."""
+    print(f"\nWARNING: this looks like a failed or partial export. More than {MAX_REMOVED_PERCENT}% "
+          "of the games would be removed from:")
+    for change in large:
+        print(f"  {change['label']}: {len(change['removed'])} of {change['old_total']} games removed")
+    print("Publishing replaces the website lists with these shorter ones.")
+    try:
+        answer = input("Type 'publish' to continue, anything else cancels: ")
+    except EOFError:
+        answer = ""
+    return answer.strip().lower() == "publish"
+
+
+def is_list_file(path):
+    """True for the only files this script may publish: site/data/*.json."""
+    return path.startswith(DATA_PREFIX) and path.endswith(".json") and path.count("/") == 2
+
+
+def unpushed_commits():
+    """Return the number of local commits that are not on the remote branch yet (0 if unknown)."""
+    count = git("rev-list", "--count", "@{u}..HEAD", check=False).strip()
+    return int(count) if count.isdigit() else 0
+
+
+def check_commits():
+    """Exit unless every commit that would go public is safe.
+
+    git push sends all local commits that are not on the remote yet, not only the site/ commit
+    made here, and each commit carries its author and committer e-mail. So check both the
+    identity used for the new commit and the commits already waiting.
+    """
+    # Without a remote branch to compare with, there is no way to know what a push would send.
+    if not git("rev-parse", "--abbrev-ref", "@{u}", check=False).strip():
+        sys.exit(
+            "Nothing was published: the current branch does not track a branch on GitHub, so the "
+            "commits a push would send cannot be checked.\n"
+            "Set it up once yourself with: git push -u origin <branch>"
+        )
+    emails = {git("config", "user.email", check=False).strip()}
+    waiting = git("log", "--format=%ae%n%ce", "@{u}..HEAD", check=False).split()
+    emails.update(waiting)
+    bad = sorted(email or "(not set)" for email in emails if not email.endswith(NOREPLY_SUFFIX))
+    if bad:
+        sys.exit(
+            "Nothing was published: this repository is public and commits must use your GitHub "
+            f"no-reply address (ending in {NOREPLY_SUFFIX}). Found:\n  " + "\n  ".join(bad)
+            + "\nSet it with: git config user.email <your no-reply address>\n"
+            "(commits already made with another address must be rewritten before pushing)."
+        )
+    outside = sorted({
+        path for path in git("diff", "--name-only", "@{u}..HEAD", check=False).splitlines()
+        if path and not is_list_file(path)
+    })
+    if outside:
+        sys.exit(
+            "Nothing was published: other commits waiting on this computer would also be pushed, "
+            "and they change files other than the game lists:\n  " + "\n  ".join(outside)
+            + "\nPush or remove those commits yourself first, then run publish-games again."
+        )
+
+
+def push():
+    result = subprocess.run(["git", "push"], capture_output=True, text=True, encoding="utf-8", errors="replace")
+    if result.returncode != 0:
+        sys.exit(
+            "The push failed, so the website is not updated yet.\n"
+            "Run 'git push' once the problem is fixed.\n\n" + result.stderr
+        )
+    print("Pushed. If the Vercel project is connected to this repository, it redeploys the website automatically.")
 
 
 def last_published(scope):
@@ -282,38 +427,64 @@ def last_published(scope):
 def publish(prompt):
     """Validate, show what changed since the last commit, ask, then commit and push.
 
-    Everything under site/ is published: the game lists and the website files (page code and
-    profiles.json), all after the privacy checks.
+    Only the game lists (site/data/*.json) are ever committed, and only the files this script
+    just checked. Any other change (website files, profiles.json, other staged files or waiting
+    commits) stops the publish before anything is committed or pushed.
     """
-    scope = "site"
     load_env()
     names = validate()
     lists = f"{len(names)} {'list contains' if len(names) == 1 else 'lists contain'}"
     print(f"Privacy check passed: {lists} only game data.")
     if os.path.exists(PROFILES_FILE):
-        print(f"{PROFILES_FILE} checked: only the public names you entered, no value from your .env.")
+        print(f"{PROFILES_FILE} checked: only public names found, no value from your .env.")
 
     staged = [line for line in git("diff", "--cached", "--name-only").splitlines() if line]
-    outside = [path for path in staged if not path.startswith("site/")]
+    outside = [path for path in staged if not is_list_file(path)]
     if outside:
         sys.exit("Other files are already staged, nothing was published:\n  " + "\n  ".join(outside))
 
-    changes = [change for change in map(compare, names) if change]
     files = site_file_changes()
-    since = last_published(scope)
+    if files:
+        sys.exit(
+            "Nothing was published. These website files have changes that were not made by the "
+            "scripts:\n  " + "\n  ".join(files)
+            + "\nCommit and push your website changes first (or undo them), then run the scripts "
+            "or publish-games again to publish the game lists."
+        )
+
+    check_commits()
+
+    changes = [change for change in map(compare, names) if change]
+    since = last_published(DATA_PREFIX)
     reference = f" ({since})" if since else ""
-    if not changes and not files:
+    waiting = unpushed_commits()
+    refreshed = refreshed_lists(changes, names)
+    if not changes and refreshed:
+        if refresh_dates(refreshed) or not waiting:
+            return
+    if not changes and waiting:
         print(
-            "\nNo changes in any of the game lists or website files compared with the last "
+            f"\nNo new changes, but {waiting} commit{'s are' if waiting != 1 else ' is'} on this "
+            "computer only (an earlier push probably failed), so the website is not updated yet."
+        )
+        try:
+            answer = input("Push now? [y/N] ")
+        except EOFError:
+            answer = "n"
+        if answer.strip().lower() in ("y", "yes"):
+            push()
+        else:
+            print("Not pushed. Run publish-games again or 'git push' later.")
+        return
+    if not changes:
+        print(
+            "\nNo changes in any of the game lists compared with the last "
             f"published version{reference}.\nNothing to publish."
         )
         return
 
     print(f"\nChanges compared with the last published version{reference}:\n")
-    if changes:
-        print("\n".join(format_changes(changes)))
-    if files:
-        print(("\n" if changes else "") + "Website files changed:\n" + "\n".join(f"  ~ {path}" for path in files))
+    print("\n".join(format_changes(changes, refreshed)))
 
     try:
         answer = input("\n" + prompt)
@@ -323,27 +494,32 @@ def publish(prompt):
         print("Not published. The changes stay on this computer only. Run publish-games later to publish.")
         return
 
-    git("add", "--", scope)
-    git("commit", "-m", commit_message(changes, files))
-    result = subprocess.run(["git", "push"], capture_output=True, text=True, encoding="utf-8", errors="replace")
-    if result.returncode != 0:
-        sys.exit(
-            "The commit was made but the push failed, so the website is not updated yet.\n"
-            "Run 'git push' once the problem is fixed.\n\n" + result.stderr
-        )
-    print("Pushed. If the Vercel project is connected to this repository, it redeploys the website automatically.")
+    large = large_removals(changes)
+    if large and not confirm_large_removals(large):
+        print("Not published. The changes stay on this computer only. Run the exporter again.")
+        return
+
+    # Commit exactly the checked list files and nothing else, whatever else is in the index.
+    paths = [f"{DATA_PREFIX}{name}" for name in [*names, INDEX_FILE]]
+    git("add", "--", *paths)
+    git("commit", "-m", commit_message(changes, refreshed), "--only", "--", *paths)
+    print("Committed on this computer.")
+    push()
+
+
+PROMPT = "Publish to the website now? This will commit and push these changes to GitHub. [y/N] "
 
 
 def offer_publish():
     """Called at the end of each exporter: show the changes and ask whether to publish them."""
     if "--no-publish" in sys.argv:
         return
-    publish("Publish to the website now? This will commit and push these changes to GitHub. [y/N] ")
+    publish(PROMPT)
 
 
 def main():
     parse_args(__doc__, exporter=False)
-    publish("Publish to the website now? This will commit and push these changes to GitHub. [y/N] ")
+    publish(PROMPT)
 
 
 if __name__ == "__main__":

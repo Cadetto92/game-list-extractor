@@ -24,6 +24,10 @@ async function load() {
     state.lists = await Promise.all(
       index.lists.map(async (name) => (await fetch("data/" + name)).json())
     );
+    // A game without a title would break sorting and searching, so it is skipped.
+    state.lists.forEach((list) => {
+      list.games = list.games.filter((g) => g && typeof g.title === "string");
+    });
   } catch (error) {
     $("summary").textContent = "";
     const box = $("error");

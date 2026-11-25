@@ -17,7 +17,7 @@ INDEX_FILE = "index.json"
 GAME_FIELDS = ("title", "id", "developer", "category", "url", "image")
 # Picture URLs must be https and on one of the stores' own picture hosts.
 IMAGE_HOSTS = ("epicgames.com", "unrealengine.com", "steamstatic.com", "gog-statics.com")
-LIST_FIELDS =("platform", "device", "extract_date", "count", "games")
+LIST_FIELDS = ("platform", "device", "extract_date", "count", "games")
 
 
 def parse_args(description, exporter=True):
@@ -144,6 +144,9 @@ def write_site_data(platform, device, games):
     clean = []
     for game in games:
         entry = {key: str(game[key]) for key in GAME_FIELDS if game.get(key) not in (None, "")}
+        if "title" not in entry:
+            # Steam can return an owned app without a name. Every game needs a title.
+            entry["title"] = f"Unnamed game {entry['id']}" if "id" in entry else "Unnamed game"
         if "image" in entry and not is_allowed_image(entry["image"]):
             print(f"WARNING: no picture for '{entry.get('title', '?')}': its link is not https "
                   "on a known store host.", file=sys.stderr)

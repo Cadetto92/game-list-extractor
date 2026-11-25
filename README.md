@@ -14,7 +14,7 @@ src/
   gog_games.py      GOG exporter
   steam_games.py    Steam exporter
   export_utils.py   Shared helpers (CSV writing, site data writing, .env loading)
-  publish_games.py  Checks the site data, then commits and pushes it
+  publish_games.py  Checks the game lists, then commits and pushes only those lists
 site/               Static website (index.html, style.css, app.js)
 site/data/          Published game lists as JSON, written by the exporters (committed)
 site/profiles.json  Hand-edited friend names shown on the site (Steam, Epic, GOG)
@@ -70,14 +70,26 @@ Add `--json` to any exporter (for example `python src\steam_games.py --json`) to
 Each exporter also writes its list to `site/data/` (for example `site/data/epic_windows.json`). The website reads those files. To update it:
 
 1. Run the exporters you want to refresh.
-2. When an exporter finishes, it compares the new lists with the last published version and prints, per platform and device, the games added, removed and updated. It then asks `Publish to the website now? This will commit and push these changes to GitHub. [y/N]`. Answer `y` to check the data, commit and push `site/data/`; the commit message contains the same summary. Press Enter or answer `n` to keep the change local. If no game changed, it says so and does not ask anything.
+2. When an exporter finishes, it compares the new lists with the last published version and prints, per platform and device, the games added, removed and updated. It then asks `Publish to the website now? This will commit and push these changes to GitHub. [y/N]`. Answer `y` to check the data, commit and push `site/data/`; the commit message contains the same summary. Press Enter or answer `n` to keep the change local. If no game changed and no list has a newer date, it says so and does not ask anything.
 3. If the Vercel project is connected to this repository (see the setup below), it redeploys automatically after the push.
 
 Add `--no-publish` to an exporter (for example `export-steam-games --no-publish`) to skip the question. `publish-games` does the same check, commit and push on its own, for example to publish several refreshed lists in one commit.
 
-Before every publish, `publish-games` also checks that `site/` holds only the website files (`index.html`, `style.css`, `app.js`, `profiles.json` and the lists in `data/`) and that no file contains a value from your `.env`. A stray file stops the publish and is named in the message.
+**Only the game lists are published.** `publish-games` commits and pushes the files in `site/data/` that it has just checked, and nothing else. It stops, with nothing committed or pushed, when:
 
-Everything under `site/` is published: the game lists in `site/data/`, the website itself (`site/index.html`, `style.css`, `app.js`) and `site/profiles.json`. Website file changes are listed under "Website files changed" before you confirm. Preview the page locally before you answer `y` (command below).
+- a website file (`site/index.html`, `style.css`, `app.js`, `profiles.json`) has changed. Commit and push website changes yourself with git, after previewing the page (command below), then publish the lists;
+- another file is already staged, or `site/` holds a file that is not part of the website;
+- a commit waiting to be pushed changes anything other than the game lists (`git push` would send it too);
+- an author or committer e-mail, or the e-mail you are about to commit with, does not end in `@users.noreply.github.com`;
+- the current branch does not track a branch on GitHub (set it once with `git push -u origin <branch>`);
+- a list is empty (0 games), has a game without a title, or its count does not match its games;
+- a file contains a value from your `.env`.
+
+**Big removals.** If a list would lose more than 10% of its games compared with the last published version, a warning names the list and asks you to type `publish` to continue; anything else cancels.
+
+**Dates.** The log always shows date changes: next to a list with game changes (`(date 2026-11-24 -> 2026-11-25)`) and as `no game changed, date ...` for a refreshed list without game changes. The same lines go in the commit message. If no game changed anywhere but a list was refreshed (its date is newer), it asks `Update only the "last updated" date on the website? [y/N]`; on `y` it commits and pushes just those list files.
+
+**Failed push.** If a push failed earlier, `publish-games` says that commits are only on your computer and offers to push them.
 
 ### What is published
 
@@ -85,7 +97,7 @@ Only game information: title, store ID, developer or category, store link, pictu
 
 The one exception is the optional **Add me as a friend** section, filled by hand in `site/profiles.json`: a Steam friend code, an Epic display name and a GOG username, so that people can add you. Edit or delete that file to change or remove the section. Only put names there that you are happy for strangers to see: never a login name, email, password or API key. Note that a Steam friend code is your Steam account number, from which your SteamID64 can be worked out.
 
-The publishing step refuses to publish if a list file contains any other field; if `profiles.json` is not valid, lacks a `platform`, `label` or `value`, or has fields other than `platform`, `label`, `value`, `note` and `url`; if any file contains a value from your `.env`; if the friend code worked out from your `STEAM_ID` appears anywhere in `profiles.json` except as the value of the entry labelled "Friend code"; or if other files are staged. The page also asks search engines not to index it.
+The publishing step also refuses to publish if a list file contains any other field or a picture link that is not https on a store host; if `profiles.json` is not valid, lacks a `platform`, `label` or `value`, or has fields other than `platform`, `label`, `value`, `note` and `url`; or if the friend code worked out from your `STEAM_ID` appears anywhere in `profiles.json` except as the value of the entry labelled "Friend code". The page also asks search engines not to index it.
 
 To avoid exposing a personal email address in commits, set your GitHub no-reply address: `git config user.email "<id>+<username>@users.noreply.github.com"`.
 
